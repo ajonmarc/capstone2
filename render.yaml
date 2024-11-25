@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: base64:SBBig6vneOytrjug5CliWTC1pPPRhzBTTOLtlbnhhys=
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL 
+        value: https://surigao-health.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-ct24ill6l47c73bk71og-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: cortel
+      - key: DB_USERNAME
+        value: cortel_user
+      - key: DB_PASSWORD
+        value: A8jPq6qlwzFMXF81we3E5Cjolvw5cjK7
