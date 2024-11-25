@@ -11,7 +11,7 @@ services:
       - key: APP_DEBUG
         value: false
       - key: APP_URL 
-        value: https://surigao-health.onrender.com
+        value: https://shsi-svpf.onrender.com
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
