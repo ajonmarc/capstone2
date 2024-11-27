@@ -25,17 +25,12 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-
-
-RUN chmod -R 775 storage bootstrap/cache
-RUN php artisan config:cache && php artisan route:cache
-
 # Install Node.js dependencies and build assets
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
 RUN npm install && npm run build
-RUN npm run dev
+
 EXPOSE 4000
 
-# Start the Laravel server and run migrations
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=4000
 
+# Start the Laravel server
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=4000"]
