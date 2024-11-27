@@ -778,7 +778,7 @@ function getChatbotResponse(userInput) {
             @click="openChatbot"
             class="fixed bottom-4 right-4 text-white p-3 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 transition"
         >
-            <img src="/chatbot.PNG" alt="Chatbot" class="w-12 h-12 rounded-full" />
+            <img src="/chatbot.png" alt="Chatbot" class="w-12 h-12 rounded-full" />
         </button>
 
         <!-- Chatbot Modal -->
