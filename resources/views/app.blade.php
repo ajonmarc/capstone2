@@ -14,8 +14,11 @@
     @routes
     @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
     @inertiaHead
+    
 </head>
 <body class="font-sans antialiased">
+<vue-component :logo-url="'{{ asset('headerlogo/' . $header->logo) }}'"></vue-component>
+
     @inertia
 </body>
 </html>
