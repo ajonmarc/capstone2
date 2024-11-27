@@ -20,8 +20,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /var/www/html
 
 # Copy project files
-COPY .env .env
-
+COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
@@ -35,7 +34,6 @@ RUN php artisan config:cache && php artisan route:cache
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
 RUN npm install && npm run build
 RUN npm run dev
-
 EXPOSE 4000
 
 # Start the Laravel server and run migrations
