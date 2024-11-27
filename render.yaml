@@ -3,6 +3,7 @@ services:
     name: laravel-app
     env: docker
     dockerfilePath: ./Dockerfile
+    staticPublishPath: public
     envVars:
       - key: APP_ENV
         value: production
