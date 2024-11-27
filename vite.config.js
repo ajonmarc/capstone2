@@ -18,7 +18,10 @@ export default defineConfig({
         }),
     ],
     build: {
-        chunkSizeWarningLimit: 1500, // Raise the limit if needed
+        cssCodeSplit: true, // Enable CSS code splitting
+        chunkSizeWarningLimit: 1500, // Suppress chunk size warnings
+        minify: 'esbuild', // Use esbuild for faster builds
+        sourcemap: false, // Disable source maps for production builds
         rollupOptions: {
             output: {
                 manualChunks(id) {
@@ -32,7 +35,7 @@ export default defineConfig({
                         if (id.includes('axios')) {
                             return 'axios'; // Separate axios
                         }
-                        return 'vendor'; // Remaining vendor dependencies
+                        return 'vendor'; // All other vendor libraries
                     }
                 },
             },
