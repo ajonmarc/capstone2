@@ -9,7 +9,7 @@ services:
       - key: APP_KEY
         value: base64:rx57YA75Fjs9vtWM52mrNuK8cc7d2SJvUNHfAr9WsjM=
       - key: APP_DEBUG
-        value: false
+        value: true
       - key: APP_URL 
         value: https://shsi-svpf.onrender.com
       - key: DB_CONNECTION
