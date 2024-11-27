@@ -31,6 +31,5 @@ RUN npm install && npm run build
 
 EXPOSE 4000
 
-
-# Start the Laravel server
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=4000"]
+# Start the Laravel server and run migrations
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=4000
