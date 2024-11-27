@@ -17,8 +17,7 @@
     
 </head>
 <body class="font-sans antialiased">
-<vue-component :logo-url="'{{ asset('headerlogo/' . $header->logo) }}'"></vue-component>
-
+    
     @inertia
 </body>
 </html>
