@@ -149,9 +149,8 @@ function getChatbotResponse(userInput) {
                         <img
                             :src="'/headerlogo/' + header.logo"
                             alt="Logo"
-                            class="h-12 w-12 mx-auto rounded-full"
+                            class="h-12 w-12 rounded-full"
                         />
-
                         <span
                             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
                         >
