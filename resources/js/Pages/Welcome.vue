@@ -146,12 +146,11 @@ function getChatbotResponse(userInput) {
                         :href="route('welcome')"
                         class="flex items-center space-x-3 rtl:space-x-reverse"
                     >
-                    <img
-    :src="`/headerlogo/${header.logo}`"
-    alt="Logo"
-    class="h-12 w-12 rounded-full"
-/>
-
+                        <img
+                            :src="'public/headerlogo/' + header.logo"
+                            alt="Logo"
+                            class="h-12 w-12 rounded-full"
+                        />
                         <span
                             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
                         >
