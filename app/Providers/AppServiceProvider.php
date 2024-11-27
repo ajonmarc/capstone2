@@ -21,12 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url): void
     {
-        // Enforce HTTPS if the environment variable ENFORCE_SSL is true
-        if (env('ENFORCE_SSL', false)) {
+        if (env('APP_ENV') === 'production' && env('ENFORCE_SSL', true)) {
             $url->forceScheme('https');
         }
-
-        // Set the default string length for database migrations
         Schema::defaultStringLength(191);
     }
+    
+
+    
 }
