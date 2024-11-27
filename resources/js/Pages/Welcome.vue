@@ -550,7 +550,7 @@ function getChatbotResponse(userInput) {
                             class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                         >
                             <img
-                                :src="'/doctorimage/' + doctor.docimage"
+                              :src="`/doctorimage/${doctor.docimage}`"
                                 alt="Logo"
                                 class="w-28 h-28 mx-auto rounded-full mb-4"
                             />

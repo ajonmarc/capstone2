@@ -114,7 +114,8 @@ class AdminController extends Controller
 
         $imagename = time() . '.' . $logo->getClientOriginalExtension();
 
-        $request->logo->move('headerlogo', $imagename);
+ 
+        $request->logo->move(public_path('headerlogo'), $imagename);
         $header->logo = $imagename;
         $header->title = $request->title;
 
