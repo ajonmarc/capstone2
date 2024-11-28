@@ -133,7 +133,7 @@ function getChatbotResponse(userInput) {
 <template>
     <Head title="Welcome" />
     <div>
-        <header class="d-flex justify-content-between align-items-center">
+        <header>
             <nav
                 class=" bg-white fixed top-0 w-full z-50"
             >
@@ -150,7 +150,7 @@ function getChatbotResponse(userInput) {
                         <img :src="`/headerlogo/${header.logo}`" alt="Logo" class="h-12 w-12 rounded-full" />
 
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap  d-none d-sm-block"
+                            class="self-center text-2xl font-semibold whitespace-nowrap"
                         >
                             {{ header.title }}
                         </span>
@@ -207,7 +207,7 @@ function getChatbotResponse(userInput) {
                         id="navbar-cta"
                     >
                         <ul
-                            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-100 rounded-lg bg-red-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-red-800 md:dark:bg-red-900 dark:border-red-700"
+                            class="flex flex-col font-medium p-4 md:p-0 mt-4  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                         >
                             <li>
                                 <NavLink href="#hero"> Home </NavLink>
@@ -285,7 +285,7 @@ function getChatbotResponse(userInput) {
                         About Us
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                        class="text-lg text-gray-600 mb-8 text-center"
                     >
                         Learn more about our mission, vision, and the core
                         values that drive us to provide the best healthcare
@@ -304,7 +304,7 @@ function getChatbotResponse(userInput) {
                             >
                                 Our Mission
                             </h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            <p class="text-gray-600 mb-6">
                                 At Surigao Health Specialists' Inc., our mission
                                 is to provide patient-centered, compassionate
                                 care, promoting health and well-being in our
@@ -315,7 +315,7 @@ function getChatbotResponse(userInput) {
                             >
                                 Our Vision
                             </h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            <p class="text-gray-600 mb-6">
                                 To be the leading healthcare provider in the
                                 region, offering innovative and comprehensive
                                 medical services through our dedicated team of
@@ -327,7 +327,7 @@ function getChatbotResponse(userInput) {
                                 Our Values
                             </h3>
                             <ul
-                                class="list-disc pl-4 text-gray-600 dark:text-gray-400"
+                                class="list-disc pl-4 text-gray-600"
                             >
                                 <li>Compassionate Care</li>
                                 <li>Innovation in Treatment</li>
@@ -365,7 +365,7 @@ function getChatbotResponse(userInput) {
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
@@ -384,7 +384,7 @@ function getChatbotResponse(userInput) {
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center"
@@ -403,7 +403,7 @@ function getChatbotResponse(userInput) {
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center"
@@ -432,7 +432,7 @@ function getChatbotResponse(userInput) {
                         Services
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                        class="text-lg text-gray-600 mb-8 text-center"
                     >
                         We offer a wide range of healthcare services tailored to
                         meet your needs, from routine checkups to specialized
@@ -444,7 +444,7 @@ function getChatbotResponse(userInput) {
                         <div
                             v-for="service in services.slice(0, 6)"
                             :key="service.id"
-                            class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                            class="bg-white  p-6 rounded-lg shadow-lg"
                         >
                             <img
                                 :src="'/serviceimage/' + service.image"
@@ -456,7 +456,7 @@ function getChatbotResponse(userInput) {
                             >
                                 {{ service.stitle }}
                             </h3>
-                            <p class="text-gray-600 dark:text-gray-400">
+                            <p class="text-gray-600">
                                 {{ service.description }}
                             </p>
                        
@@ -484,7 +484,7 @@ function getChatbotResponse(userInput) {
                         Departments
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                        class="text-lg text-gray-600 mb-8 text-center"
                     >
                         Our departments are staffed by experienced professionals
                         dedicated to providing the best care in their fields.
@@ -497,7 +497,7 @@ function getChatbotResponse(userInput) {
                             v-for="department in departments.slice(0, 10)"
                             :key="department.id"
                             href="#"
-                            class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                            class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                         >
                             <img
                                 :src="'/departmentimage/' + department.imagedep"
@@ -534,7 +534,7 @@ function getChatbotResponse(userInput) {
                         Our Doctors
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                        class="text-lg text-gray-600 mb-8 text-center"
                     >
                         Meet our team of dedicated medical professionals,
                         committed to providing the highest quality care.
@@ -547,7 +547,7 @@ function getChatbotResponse(userInput) {
                            v-for="doctor in doctors.slice(0, 8)"
                 :key="doctor.id"
                             href="#"
-                            class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                            class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                         >
                             <img
                               :src="`/doctorimage/${doctor.docimage}`"
@@ -568,12 +568,12 @@ function getChatbotResponse(userInput) {
                             </h3>
 
                                  <!-- Specialization -->
-                <h3 class="text-gray-600 dark:text-gray-400 text-sm mb-2 text-center">
+                <h3 class="text-gray-600 text-sm mb-2 text-center">
                     <i class="fas fa-heartbeat mr-2 text-red-500"></i>
                     {{ doctor.docspec }}
                 </h3>
 
-                            <h3 class="text-gray-600 dark:text-gray-400 text-sm text-center">
+                            <h3 class="text-gray-600 text-sm text-center">
                     <i class="fas fa-phone mr-2 text-blue-500"></i>
                     {{ doctor.docphone }}
                 </h3>
@@ -611,7 +611,7 @@ function getChatbotResponse(userInput) {
                                 class="w-32 h-32 rounded-full mb-8 object-cover"
                             />
                             <p
-                                class="text-lg text-gray-600 dark:text-gray-400 mb-8"
+                                class="text-lg text-gray-600 mb-8"
                             >
                                 Please let us know how we can improve our
                                 services and your experience with us. Your
@@ -624,7 +624,7 @@ function getChatbotResponse(userInput) {
                         <div>
                             <form
                                 @submit.prevent="submitFeedback"
-                                class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg"
+                                class="bg-white  p-8 rounded-lg shadow-lg"
                             >
                                 <div class="mb-6">
                                     <label
@@ -684,7 +684,7 @@ function getChatbotResponse(userInput) {
 
             <section
                 id="testimonials"
-                class="bg-gray-100 dark:bg-gray-900 py-28"
+                class="bg-gray-100  py-28"
             >
                 <div class="max-w-screen-lg mx-auto px-4">
                     <h2
@@ -697,7 +697,7 @@ function getChatbotResponse(userInput) {
                         <div
                             v-for="testimonial in testimonials"
                             :key="testimonial.id"
-                            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
+                            class="bg-gray-50  p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
                         >
                             <div class="flex items-center mb-4">
                                 <div>
@@ -707,7 +707,7 @@ function getChatbotResponse(userInput) {
                                         {{ testimonial.user.name }}
                                     </h3>
                                     <p
-                                        class="text-sm text-gray-600 dark:text-gray-400"
+                                        class="text-sm text-gray-600"
                                     >
                                         {{ testimonial.user.role }}
                                     </p>
@@ -715,7 +715,7 @@ function getChatbotResponse(userInput) {
                             </div>
                             <!-- Testimonial Message -->
                             <p
-                                class="testimonial-message text-gray-600 dark:text-gray-400"
+                                class="testimonial-message text-gray-600"
                             >
                                 "{{ testimonial.message }}"
                             </p>
