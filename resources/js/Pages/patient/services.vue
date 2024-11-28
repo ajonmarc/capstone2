@@ -21,30 +21,30 @@ const isMenuOpen = ref(false);
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
 };
-
 </script>
 
 <template>
     <Head title="Patient Dashboard" />
     <header>
         <nav
-            class="bg-white border-red-200 dark:bg-red-900 fixed top-0 w-full z-50"
+            class="bg-white fixed top-0 w-full z-50"
         >
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
             >
-            <Link
+                <Link
                     v-for="header in headers"
                     :key="header.id"
                     :href="route('dashboard')"
-                    class="flex items-center space-x-3 rtl:space-x-reverse" >
+                    class="flex items-center space-x-3 rtl:space-x-reverse"
+                >
                     <img
                         :src="'/headerlogo/' + header.logo"
                         alt="Logo"
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                        class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
                     >
                         {{ header.title }}
                     </span>
@@ -54,7 +54,7 @@ const toggleMenu = () => {
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
+                       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -127,7 +127,7 @@ const toggleMenu = () => {
                     id="navbar-cta"
                 >
                     <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-100 rounded-lg bg-red-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-red-800 md:dark:bg-red-900 dark:border-red-700"
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                     >
                         <li>
                             <NavLink
@@ -158,7 +158,7 @@ const toggleMenu = () => {
                                 :href="route('patient.departments')"
                                 :active="route().current('patient.departments')"
                             >
-                            Departments
+                                Departments
                             </NavLink>
                         </li>
                         <li>
@@ -195,9 +195,9 @@ const toggleMenu = () => {
         </nav>
     </header>
     <PatientLayout>
-     <!-- Services Section -->
-     <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
-        <div class="max-w-screen-xl mx-auto px-4">
+        <!-- Services Section -->
+        <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
+            <div class="max-w-screen-xl mx-auto px-4">
                 <h2
                     class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
                 >
@@ -234,43 +234,46 @@ const toggleMenu = () => {
                     </div>
                 </div>
             </div>
-            </section>
+        </section>
     </PatientLayout>
-       
+
     <footer
-    v-for="footer in footers"
-    :key="footer.id"
-    class="bg-red-700 text-white py-6"
->
-    <div class="max-w-screen-xl mx-auto px-16">
-        <div class="flex justify-between items-center">
-            <p class="text-sm">
-                <i class="fas fa-copyright"></i> 2024 Surigao Health. All rights reserved.
-            </p>
-            <div class="space-x-4">
-                <a href="#" class="text-white hover:underline">
-                    <i class="fas fa-shield-alt me-1"></i> Privacy Policy
-                </a>
-                <a href="#" class="text-white hover:underline">
-                    <i class="fas fa-file-alt me-1"></i> Terms of Service
-                </a>
+        v-for="footer in footers"
+        :key="footer.id"
+        class="bg-red-700 text-white py-6"
+    >
+        <div class="max-w-screen-xl mx-auto px-16">
+            <div class="flex justify-between items-center">
+                <p class="text-sm">
+                    <i class="fas fa-copyright"></i> 2024 Surigao Health. All
+                    rights reserved.
+                </p>
+                <div class="space-x-4">
+                    <a href="#" class="text-white hover:underline">
+                        <i class="fas fa-shield-alt me-1"></i> Privacy Policy
+                    </a>
+                    <a href="#" class="text-white hover:underline">
+                        <i class="fas fa-file-alt me-1"></i> Terms of Service
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <p class="text-sm">
+                    <i class="fas fa-phone-alt me-1"></i> Contact:
+                    {{ footer.contact }}
+                </p>
+                <p class="text-sm">
+                    <i class="fab fa-facebook me-1"></i>
+                    Facebook:
+                    <a href="#" class="hover:underline"> {{ footer.fbname }}</a>
+                </p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <p class="text-sm">
+                    <i class="fas fa-map-marker-alt me-1"></i>
+                    {{ footer.place }}
+                </p>
             </div>
         </div>
-        <div class="flex justify-between items-center mt-4">
-            <p class="text-sm">
-                <i class="fas fa-phone-alt me-1"></i> Contact: {{ footer.contact }}
-            </p>
-            <p class="text-sm">
-                <i class="fab fa-facebook me-1"></i>
-                Facebook:
-                <a href="#" class="hover:underline"> {{ footer.fbname }}</a>
-            </p>
-        </div>
-        <div class="flex justify-between items-center mt-4">
-            <p class="text-sm">
-                <i class="fas fa-map-marker-alt me-1"></i> {{ footer.place }}
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </template>

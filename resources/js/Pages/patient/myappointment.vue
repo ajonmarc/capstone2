@@ -93,7 +93,7 @@ const deleteAppointment = (booking) => {
     <Head title="Patient Dashboard" />
     <header>
         <nav
-            class="bg-white border-red-200 dark:bg-red-900 fixed top-0 w-full z-50"
+            class="bg-white fixed top-0 w-full z-50"
         >
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -110,17 +110,17 @@ const deleteAppointment = (booking) => {
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                    >
-                        {{ header.title }}
-                    </span>
+                            class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
+                        >
+                            {{ header.title }}
+                        </span>
                 </Link>
                 <div
                     class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
+                          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -193,7 +193,7 @@ const deleteAppointment = (booking) => {
                     id="navbar-cta"
                 >
                     <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-100 rounded-lg bg-red-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-red-800 md:dark:bg-red-900 dark:border-red-700"
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                     >
                         <li>
                             <NavLink

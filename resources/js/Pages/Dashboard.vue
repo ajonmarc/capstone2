@@ -84,19 +84,12 @@ const submitFeedback = () => {
         },
     });
 };
-
-
-
-
-
 </script>
 <template>
     <Head title="Dashboard" />
 
     <header>
-        <nav
-            class="bg-white  fixed top-0 w-full z-50"
-        >
+        <nav class="bg-white fixed top-0 w-full z-50">
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
             >
@@ -112,7 +105,7 @@ const submitFeedback = () => {
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap "
+                        class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
                     >
                         {{ header.title }}
                     </span>
@@ -122,7 +115,7 @@ const submitFeedback = () => {
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400  dark:focus:ring-red-600"
+                          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -195,7 +188,7 @@ const submitFeedback = () => {
                     id="navbar-cta"
                 >
                     <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-100 rounded-lg bg-red-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-red-800 md:dark:bg-red-900 dark:border-red-700"
+                         class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                     >
                         <li>
                             <NavLink
@@ -267,43 +260,41 @@ const submitFeedback = () => {
         <!-- Hero Section -->
         <section
             id="hero"
-            class="hero-section bg-gray-50 dark:bg-gray-50 py-56"
+            class="hero-section bg-gray-50  py-56"
         >
             <div class="max-w-screen-xl mx-auto px-4 text-center">
                 <h1
-                    class="text-4xl font-bold text-gray-900 dark:text-gray mb-8"
+                    class="text-4xl font-bold text-gray-900  mb-8"
                 >
                     Welcome to Surigao Health Specialists' Inc.
                 </h1>
-                <p class="text-lg text-gray-600 dark:text-gray">
+                <p class="text-lg text-gray-600 ">
                     Your trusted partner in healthcare services. Schedule
                     appointments, consult with specialists, and get the best
                     care at your convenience.
                 </p>
 
-                <p class="text-lg text-gray-600 dark:text-gray mb-16">
+                <p class="text-lg text-gray-600  mb-16">
                     Streamline your healthcare experience with our user-friendly
                     Chatbot for instant support.
                 </p>
                 <Link
-                        :href="route('patient.doctors')"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
+                    :href="route('patient.doctors')"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3"
                 >
                     Schedule an Appointment
-            </Link>
+                </Link>
             </div>
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="about" class="bg-gray-50  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     About Us
                 </h2>
                 <p
-                    class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                    class="text-lg text-gray-600  mb-8 text-center"
                 >
                     Learn more about our mission, vision, and the core values
                     that drive us to provide the best healthcare services in our
@@ -317,33 +308,27 @@ const submitFeedback = () => {
                         />
                     </div>
                     <div class="flex flex-col justify-center">
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Mission
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        <p class="text-gray-600  mb-6">
                             At Surigao Health Specialists' Inc., our mission is
                             to provide patient-centered, compassionate care,
                             promoting health and well-being in our community.
                         </p>
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Vision
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        <p class="text-gray-600  mb-6">
                             To be the leading healthcare provider in the region,
                             offering innovative and comprehensive medical
                             services through our dedicated team of specialists.
                         </p>
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Values
                         </h3>
                         <ul
-                            class="list-disc pl-4 text-gray-600 dark:text-gray-400"
+                            class="list-disc pl-4 text-gray-600 "
                         >
                             <li>Compassionate Care</li>
                             <li>Innovation in Treatment</li>
@@ -356,13 +341,13 @@ const submitFeedback = () => {
         </section>
 
         <!-- Statistics Section with its own background -->
-        <section class="bg-blue-100 dark:bg-blue-900 py-20">
+        <section class="bg-blue-100  py-20">
             <div class="max-w-screen-xl mx-auto px-4">
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
                 >
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
@@ -372,16 +357,16 @@ const submitFeedback = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Doctors
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600 ">
                             {{ doctorCount }} specialists
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
@@ -391,16 +376,16 @@ const submitFeedback = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Departments
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600 ">
                             {{ departmentCount }} specialized departments
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center"
@@ -410,16 +395,16 @@ const submitFeedback = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Research Labs
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600 ">
                             {{ researchlabCount }} advanced labs
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center"
@@ -427,11 +412,11 @@ const submitFeedback = () => {
                             <i class="fas fa-award text-red-500 text-3xl"></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Awards
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600">
                             {{ awardCount }} excellence awards
                         </p>
                     </div>
@@ -439,15 +424,13 @@ const submitFeedback = () => {
             </div>
         </section>
         <!-- Services Section -->
-        <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
+        <section id="services" class="bg-gray-100  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     Services
                 </h2>
                 <p
-                    class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                    class="text-lg text-gray-600  mb-8 text-center"
                 >
                     We offer a wide range of healthcare services tailored to
                     meet your needs, from routine checkups to specialized
@@ -459,19 +442,17 @@ const submitFeedback = () => {
                     <div
                         v-for="service in services.slice(0, 6)"
                         :key="service.id"
-                        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                        class="bg-white  p-6 rounded-lg shadow-lg"
                     >
                         <img
                             :src="'/serviceimage/' + service.image"
                             alt="Logo"
                             class="w-full h-20 object-contain rounded mb-4"
                         />
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-2"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
                             {{ service.stitle }}
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
+                        <p class="text-gray-600 ">
                             {{ service.description }}
                         </p>
                     </div>
@@ -482,22 +463,20 @@ const submitFeedback = () => {
             <div class="mt-12 text-center">
                 <Link
                     :href="route('patient.services')"
-                    class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                    class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none"
                 >
                     Browse All Services
                 </Link>
             </div>
         </section>
 
-        <section id="departments" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="departments" class="bg-gray-50  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     Departments
                 </h2>
                 <p
-                    class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                    class="text-lg text-gray-600  mb-8 text-center"
                 >
                     Our departments are staffed by experienced professionals
                     dedicated to providing the best care in their fields.
@@ -510,7 +489,7 @@ const submitFeedback = () => {
                         v-for="department in departments.slice(0, 10)"
                         :key="department.id"
                         @click="goToDepartment(department.id)"
-                        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
+                        class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
                     >
                         <img
                             :src="'/departmentimage/' + department.imagedep"
@@ -518,7 +497,7 @@ const submitFeedback = () => {
                             class="w-full h-20 object-contain rounded mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900 mb-2 text-center"
                         >
                             {{ department.titledep }}
                         </h3>
@@ -528,7 +507,7 @@ const submitFeedback = () => {
                 <div class="mt-12 text-center">
                     <Link
                         :href="route('patient.departments')"
-                    class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                        class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none"
                     >
                         Browse All Departments
                     </Link>
@@ -537,15 +516,13 @@ const submitFeedback = () => {
         </section>
 
         <!-- Doctors Section -->
-        <section id="doctors" class="bg-gray-100 dark:bg-gray-100 py-28">
+        <section id="doctors" class="bg-gray-100  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     Our Doctors
                 </h2>
                 <p
-                    class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                    class="text-lg text-gray-600  mb-8 text-center"
                 >
                     Meet our team of dedicated medical professionals, committed
                     to providing the highest quality care.
@@ -557,7 +534,7 @@ const submitFeedback = () => {
                     <div
                         v-for="doctor in doctors.slice(0, 8)"
                         :key="doctor.id"
-                        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                        class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                     >
                         <img
                             :src="'/doctorimage/' + doctor.docimage"
@@ -565,12 +542,12 @@ const submitFeedback = () => {
                             class="w-28 h-28 mx-auto rounded-full mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900 mb-2 text-center"
                         >
                             {{ doctor.docname }}
                         </h3>
                         <h3
-                            class="text-xl font-semibold text-yellow-500 dark:text-yellow mb-2 text-center"
+                            class="text-xl font-semibold text-yellow-500  mb-2 text-center"
                         >
                             <i class="fas fa-building mr-2 text-gray-500"></i>
                             {{ doctor.docroom }}
@@ -578,14 +555,14 @@ const submitFeedback = () => {
 
                         <!-- Specialization -->
                         <h3
-                            class="text-gray-600 dark:text-gray-400 text-sm mb-2 text-center"
+                            class="text-gray-600  text-sm mb-2 text-center"
                         >
                             <i class="fas fa-heartbeat mr-2 text-red-500"></i>
                             {{ doctor.docspec }}
                         </h3>
 
                         <h3
-                            class="text-gray-600 dark:text-gray-400 text-sm text-center"
+                            class="text-gray-600  text-sm text-center"
                         >
                             <i class="fas fa-phone mr-2 text-blue-500"></i>
                             {{ doctor.docphone }}
@@ -603,7 +580,7 @@ const submitFeedback = () => {
                 <div class="mt-12 text-center">
                     <Link
                         :href="route('patient.doctors')"
-                    class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                        class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none"
                     >
                         Browse All Doctors
                     </Link>
@@ -612,14 +589,12 @@ const submitFeedback = () => {
         </section>
 
         <!-- Support Section (Feedback Form) -->
-        <section id="contact" class="bg-gray-50 dark:bg-gray-700 py-28">
+        <section id="contact" class="bg-gray-50 py-28">
             <div class="max-w-screen-lg mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Left: Introductory Text -->
                     <div class="flex flex-col justify-center">
-                        <h2
-                            class="text-3xl font-bold text-gray-900  mb-8"
-                        >
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">
                             We Value Your Feedback
                         </h2>
 
@@ -630,7 +605,7 @@ const submitFeedback = () => {
                             class="w-32 h-32 rounded-full mb-8 object-cover"
                         />
                         <p
-                            class="text-lg text-gray-600 dark:text-gray-400 mb-8"
+                            class="text-lg text-gray-600  mb-8"
                         >
                             Please let us know how we can improve our services
                             and your experience with us. Your feedback is
@@ -642,19 +617,19 @@ const submitFeedback = () => {
                     <div>
                         <form
                             @submit.prevent="submitFeedback"
-                            class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg"
+                            class="bg-white  p-8 rounded-lg shadow-lg"
                         >
                             <div class="mb-6">
                                 <label
                                     for="message"
-                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                                    class="block mb-2 text-sm font-medium text-gray-900"
                                     >Message</label
                                 >
                                 <textarea
                                     v-model="feedback.message"
                                     id="message"
                                     rows="5"
-                                    class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
+                                    class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100"
                                     required
                                 ></textarea>
                             </div>
@@ -662,7 +637,7 @@ const submitFeedback = () => {
                             <!-- Submit Button -->
                             <button
                                 type="submit"
-                                class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
+                                class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300"
                             >
                                 Submit Feedback
                             </button>
@@ -673,11 +648,9 @@ const submitFeedback = () => {
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="bg-gray-100 dark:bg-gray-900 py-28">
+        <section id="testimonials" class="bg-gray-100  py-28">
             <div class="max-w-screen-lg mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-12 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
                     What Our Patients Say
                 </h2>
                 <div class="flex overflow-x-auto space-x-8">
@@ -685,17 +658,15 @@ const submitFeedback = () => {
                     <div
                         v-for="testimonial in testimonials"
                         :key="testimonial.id"
-                        class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
+                        class="bg-gray-50  p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
                     >
                         <div class="flex items-center mb-4">
                             <div>
-                                <h3
-                                    class="text-xl font-semibold text-gray-900 "
-                                >
+                                <h3 class="text-xl font-semibold text-gray-900">
                                     {{ testimonial.user.name }}
                                 </h3>
                                 <p
-                                    class="text-sm text-gray-600 dark:text-gray-400"
+                                    class="text-sm text-gray-600 "
                                 >
                                     {{ testimonial.user.role }}
                                 </p>
@@ -703,7 +674,7 @@ const submitFeedback = () => {
                         </div>
                         <!-- Testimonial Message -->
                         <p
-                            class="testimonial-message text-gray-600 dark:text-gray-400"
+                            class="testimonial-message text-gray-600 "
                         >
                             "{{ testimonial.message }}"
                         </p>

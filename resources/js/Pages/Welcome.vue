@@ -20,26 +20,25 @@ defineProps({
     doctors: Array,
     testimonials: Array,
 
-   
     doctorCount: {
-    type: Number,
-    required: true
-},
+        type: Number,
+        required: true,
+    },
 
-departmentCount: {
-    type: Number,
-    required: true
-},
+    departmentCount: {
+        type: Number,
+        required: true,
+    },
 
-researchlabCount: {
-    type: Number,
-    required: true
-},
+    researchlabCount: {
+        type: Number,
+        required: true,
+    },
 
-awardCount: {
-    type: Number,
-    required: true
-},
+    awardCount: {
+        type: Number,
+        required: true,
+    },
 });
 
 const isMenuOpen = ref(false);
@@ -59,16 +58,21 @@ const submitFeedback = () => {
     console.log("Feedback Submitted:", feedback.value);
 };
 
-
 const isChatbotOpen = ref(false);
 const messages = ref([
-    { type: "bot", text: "Hello! How can I assist you today? Choose an option or type your query." },
+    {
+        type: "bot",
+        text: "Hello! How can I assist you today? Choose an option or type your query.",
+    },
 ]);
 const userMessage = ref("");
 
 // Predefined quick replies
 const quickReplies = ref([
-    { label: "Appointment Process", text: "Tell me about the appointment process" },
+    {
+        label: "Appointment Process",
+        text: "Tell me about the appointment process",
+    },
     { label: "Total Doctors", text: "How many doctors are there?" },
     { label: "Total Departments", text: "What departments are available?" },
     { label: "Operating Hours", text: "What are the operating hours?" },
@@ -116,10 +120,14 @@ function sendMessage() {
 function getChatbotResponse(userInput) {
     // Replace with your own AI/chatbot backend integration
     const responses = {
-        "tell me about the appointment process": "You can book an appointment by visiting the 'Doctors' section and selecting a date and time.",
-        "how many doctors are there?": "We currently have 42 experienced doctors in various specialties.",
-        "what departments are available?": "Our hospital includes Cardiology, Neurology, Pediatrics, Orthopedics, and many more.",
-        "what are the operating hours?": "We are open from Monday 6:00 AM - 5:00 PM Tuesday 6:00 AM - 5:00 PM Wednesday 6:00 AM - 5:00 PM Thursday 6:00 AM - 5:00 PM Friday 6:00 AM - 5:00 PM Saturday 6:00 AM - 5:00 PM Sunday CLOSED.",
+        "tell me about the appointment process":
+            "You can book an appointment by visiting the 'Doctors' section and selecting a date and time.",
+        "how many doctors are there?":
+            "We currently have 42 experienced doctors in various specialties.",
+        "what departments are available?":
+            "Our hospital includes Cardiology, Neurology, Pediatrics, Orthopedics, and many more.",
+        "what are the operating hours?":
+            "We are open from Monday 6:00 AM - 5:00 PM Tuesday 6:00 AM - 5:00 PM Wednesday 6:00 AM - 5:00 PM Thursday 6:00 AM - 5:00 PM Friday 6:00 AM - 5:00 PM Saturday 6:00 AM - 5:00 PM Sunday CLOSED.",
     };
 
     // Match user input
@@ -134,9 +142,7 @@ function getChatbotResponse(userInput) {
     <Head title="Welcome" />
     <div>
         <header>
-            <nav
-                class=" bg-white fixed top-0 w-full z-50"
-            >
+            <nav class="bg-white fixed top-0 w-full z-50">
                 <div
                     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
                 >
@@ -146,11 +152,14 @@ function getChatbotResponse(userInput) {
                         :href="route('welcome')"
                         class="flex items-center space-x-3 rtl:space-x-reverse"
                     >
-                  
-                        <img :src="`/headerlogo/${header.logo}`" alt="Logo" class="h-12 w-12 rounded-full" />
+                        <img
+                            :src="`/headerlogo/${header.logo}`"
+                            alt="Logo"
+                            class="h-12 w-12 rounded-full"
+                        />
 
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap"
+                            class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
                         >
                             {{ header.title }}
                         </span>
@@ -166,20 +175,20 @@ function getChatbotResponse(userInput) {
                         <template v-else>
                             <Link
                                 :href="route('login')"
-                                class="text-red-800  hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none dark:focus:ring-red-800"
+                                class="text-red-800 hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none "
                             >
                                 Log in
                             </Link>
                             <Link
                                 :href="route('register')"
-                                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
+                                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2  focus:outline-none "
                             >
                                 Register
                             </Link>
                         </template>
                         <button
                             @click="toggleMenu"
-                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400  dark:focus:ring-red-600"
+                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 "
                             aria-controls="navbar-cta"
                             aria-expanded="false"
                         >
@@ -207,7 +216,7 @@ function getChatbotResponse(userInput) {
                         id="navbar-cta"
                     >
                         <ul
-                            class="flex flex-col font-medium p-4 md:p-0 mt-4  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+                            class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                         >
                             <li>
                                 <NavLink href="#hero"> Home </NavLink>
@@ -249,27 +258,27 @@ function getChatbotResponse(userInput) {
             <!-- Hero Section -->
             <section
                 id="hero"
-                class="hero-section bg-gray-50 dark:bg-gray-50 py-56"
+                class="hero-section bg-gray-50  py-56"
             >
                 <div class="max-w-screen-xl mx-auto px-4 text-center">
                     <h1
-                        class="text-4xl font-bold text-gray-900 dark:text-gray mb-8"
+                        class="text-4xl font-bold text-gray-900  mb-8"
                     >
                         Welcome to Surigao Health Specialists' Inc.
                     </h1>
-                    <p class="text-lg text-gray-600 dark:text-gray">
+                    <p class="text-lg text-gray-600 ">
                         Your trusted partner in healthcare services. Schedule
                         appointments, consult with specialists, and get the best
                         care at your convenience.
                     </p>
 
-                    <p class="text-lg text-gray-600 dark:text-gray mb-16">
+                    <p class="text-lg text-gray-600  mb-16">
                         Streamline your healthcare experience with our
                         user-friendly Chatbot for instant support.
                     </p>
                     <Link
                         :href="route('register')"
-                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
+                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3  focus:outline-none "
                     >
                         Schedule an Appointment
                     </Link>
@@ -277,16 +286,14 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- About Us Section -->
-            <section id="about" class="bg-gray-50 dark:bg-gray-100 py-28">
+            <section id="about" class="bg-gray-50  py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
                         class="text-3xl font-bold text-gray-900 mb-8 text-center"
                     >
                         About Us
                     </h2>
-                    <p
-                        class="text-lg text-gray-600 mb-8 text-center"
-                    >
+                    <p class="text-lg text-gray-600 mb-8 text-center">
                         Learn more about our mission, vision, and the core
                         values that drive us to provide the best healthcare
                         services in our community.
@@ -300,7 +307,7 @@ function getChatbotResponse(userInput) {
                         </div>
                         <div class="flex flex-col justify-center">
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-4"
+                                class="text-xl font-semibold text-gray-900 mb-4"
                             >
                                 Our Mission
                             </h3>
@@ -311,7 +318,7 @@ function getChatbotResponse(userInput) {
                                 community.
                             </p>
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-4"
+                                class="text-xl font-semibold text-gray-900 mb-4"
                             >
                                 Our Vision
                             </h3>
@@ -322,13 +329,11 @@ function getChatbotResponse(userInput) {
                                 specialists.
                             </p>
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-4"
+                                class="text-xl font-semibold text-gray-900 mb-4"
                             >
                                 Our Values
                             </h3>
-                            <ul
-                                class="list-disc pl-4 text-gray-600"
-                            >
+                            <ul class="list-disc pl-4 text-gray-600">
                                 <li>Compassionate Care</li>
                                 <li>Innovation in Treatment</li>
                                 <li>Excellence in Service</li>
@@ -340,100 +345,92 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Statistics Section with its own background -->
-        <section class="bg-blue-100 py-20">
-            <div class="max-w-screen-xl mx-auto px-4">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
-                >
+            <section class="bg-blue-100 py-20">
+                <div class="max-w-screen-xl mx-auto px-4">
                     <div
-                        class="bg-white  p-6 rounded-lg shadow-md"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
                     >
-                        <div
-                            class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
-                        >
-                            <i
-                                class="fas fa-user-md text-blue-500 text-3xl"
-                            ></i>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
+                            >
+                                <i
+                                    class="fas fa-user-md text-blue-500 text-3xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 "
+                            >
+                                Doctors
+                            </h3>
+                            <p class="text-gray-600 ">
+                                {{ doctorCount }} specialists
+                            </p>
                         </div>
-                        <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
-                        >
-                            Doctors
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
-                            {{ doctorCount }} specialists
-                        </p>
-                    </div>
-                    <div
-                        class="bg-white  p-6 rounded-lg shadow-md"
-                    >
-                        <div
-                            class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
-                        >
-                            <i
-                                class="fas fa-hospital text-green-500 text-3xl"
-                            ></i>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
+                            >
+                                <i
+                                    class="fas fa-hospital text-green-500 text-3xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 "
+                            >
+                                Departments
+                            </h3>
+                            <p class="text-gray-600 ">
+                                {{ departmentCount }} specialized departments
+                            </p>
                         </div>
-                        <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
-                        >
-                            Departments
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
-                            {{ departmentCount }}  specialized departments
-                        </p>
-                    </div>
-                    <div
-                        class="bg-white  p-6 rounded-lg shadow-md"
-                    >
-                        <div
-                            class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center"
-                        >
-                            <i
-                                class="fas fa-flask text-yellow-500 text-3xl"
-                            ></i>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center"
+                            >
+                                <i
+                                    class="fas fa-flask text-yellow-500 text-3xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 "
+                            >
+                                Research Labs
+                            </h3>
+                            <p class="text-gray-600 ">
+                                {{ researchlabCount }} advanced labs
+                            </p>
                         </div>
-                        <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
-                        >
-                            Research Labs
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
-                            {{ researchlabCount }}  advanced labs
-                        </p>
-                    </div>
-                    <div
-                        class="bg-white  p-6 rounded-lg shadow-md"
-                    >
-                        <div
-                            class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center"
-                        >
-                            <i class="fas fa-award text-red-500 text-3xl"></i>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center"
+                            >
+                                <i
+                                    class="fas fa-award text-red-500 text-3xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 "
+                            >
+                                Awards
+                            </h3>
+                            <p class="text-gray-600 ">
+                                {{ awardCount }} excellence awards
+                            </p>
                         </div>
-                        <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
-                        >
-                            Awards
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
-                            {{ awardCount }}  excellence awards
-                        </p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             <!-- Services Section -->
-            <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
+            <section id="services" class="bg-gray-100 py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900 mb-8 text-center"
                     >
                         Services
                     </h2>
-                    <p
-                        class="text-lg text-gray-600 mb-8 text-center"
-                    >
+                    <p class="text-lg text-gray-600 mb-8 text-center">
                         We offer a wide range of healthcare services tailored to
                         meet your needs, from routine checkups to specialized
                         treatments.
@@ -444,7 +441,7 @@ function getChatbotResponse(userInput) {
                         <div
                             v-for="service in services.slice(0, 6)"
                             :key="service.id"
-                            class="bg-white  p-6 rounded-lg shadow-lg"
+                            class="bg-white p-6 rounded-lg shadow-lg"
                         >
                             <img
                                 :src="'/serviceimage/' + service.image"
@@ -452,14 +449,13 @@ function getChatbotResponse(userInput) {
                                 class="w-full h-20 object-contain rounded mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-2"
+                                class="text-xl font-semibold text-gray-900 mb-2"
                             >
                                 {{ service.stitle }}
                             </h3>
                             <p class="text-gray-600">
                                 {{ service.description }}
                             </p>
-                       
                         </div>
                     </div>
                 </div>
@@ -468,7 +464,7 @@ function getChatbotResponse(userInput) {
                 <div class="mt-12 text-center">
                     <a
                         href="#"
-                        class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                        class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none "
                     >
                         Browse All Services
                     </a>
@@ -476,16 +472,14 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Departments Section -->
-            <section id="departments" class="bg-gray-50 dark:bg-gray-100 py-28">
+            <section id="departments" class="bg-gray-50  py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900 mb-8 text-center"
                     >
                         Departments
                     </h2>
-                    <p
-                        class="text-lg text-gray-600 mb-8 text-center"
-                    >
+                    <p class="text-lg text-gray-600 mb-8 text-center">
                         Our departments are staffed by experienced professionals
                         dedicated to providing the best care in their fields.
                     </p>
@@ -497,16 +491,15 @@ function getChatbotResponse(userInput) {
                             v-for="department in departments.slice(0, 10)"
                             :key="department.id"
                             href="#"
-                            class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                            class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                         >
                             <img
                                 :src="'/departmentimage/' + department.imagedep"
                                 alt="Logo"
-                        
-                                    class="w-full h-20 object-contain rounded mb-4"
+                                class="w-full h-20 object-contain rounded mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-2 text-center"
+                                class="text-xl font-semibold text-gray-900 mb-2 text-center"
                             >
                                 {{ department.titledep }}
                             </h3>
@@ -517,7 +510,7 @@ function getChatbotResponse(userInput) {
                     <div class="mt-12 text-center">
                         <a
                             href="#"
-                             class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                            class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none "
                         >
                             Browse All Departments
                         </a>
@@ -526,16 +519,14 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Doctors Section -->
-            <section id="doctors" class="bg-gray-100 dark:bg-gray-100 py-28">
+            <section id="doctors" class="bg-gray-100  py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900 mb-8 text-center"
                     >
                         Our Doctors
                     </h2>
-                    <p
-                        class="text-lg text-gray-600 mb-8 text-center"
-                    >
+                    <p class="text-lg text-gray-600 mb-8 text-center">
                         Meet our team of dedicated medical professionals,
                         committed to providing the highest quality care.
                     </p>
@@ -544,39 +535,44 @@ function getChatbotResponse(userInput) {
                         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
                     >
                         <a
-                           v-for="doctor in doctors.slice(0, 8)"
-                :key="doctor.id"
+                            v-for="doctor in doctors.slice(0, 8)"
+                            :key="doctor.id"
                             href="#"
-                            class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                            class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                         >
                             <img
-                              :src="`/doctorimage/${doctor.docimage}`"
+                                :src="`/doctorimage/${doctor.docimage}`"
                                 alt="Logo"
                                 class="w-28 h-28 mx-auto rounded-full mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-300  mb-2 text-center"
+                                class="text-xl font-semibold text-gray-300 mb-2 text-center"
                             >
                                 {{ doctor.docname }}
                             </h3>
-                           
+
                             <h3
-                                class="text-xl font-semibold text-yellow-500 dark:text-yellow mb-2 text-center"
+                                class="text-xl font-semibold text-yellow-500  mb-2 text-center"
                             >
-                            <i class="fas fa-building mr-2 text-gray-500"></i> <!-- Changed to room icon -->
-                          {{ doctor.docroom }}
+                                <i
+                                    class="fas fa-building mr-2 text-gray-500"
+                                ></i>
+                                <!-- Changed to room icon -->
+                                {{ doctor.docroom }}
                             </h3>
 
-                                 <!-- Specialization -->
-                <h3 class="text-gray-600 text-sm mb-2 text-center">
-                    <i class="fas fa-heartbeat mr-2 text-red-500"></i>
-                    {{ doctor.docspec }}
-                </h3>
+                            <!-- Specialization -->
+                            <h3 class="text-gray-600 text-sm mb-2 text-center">
+                                <i
+                                    class="fas fa-heartbeat mr-2 text-red-500"
+                                ></i>
+                                {{ doctor.docspec }}
+                            </h3>
 
                             <h3 class="text-gray-600 text-sm text-center">
-                    <i class="fas fa-phone mr-2 text-blue-500"></i>
-                    {{ doctor.docphone }}
-                </h3>
+                                <i class="fas fa-phone mr-2 text-blue-500"></i>
+                                {{ doctor.docphone }}
+                            </h3>
                         </a>
                     </div>
 
@@ -584,7 +580,7 @@ function getChatbotResponse(userInput) {
                     <div class="mt-12 text-center">
                         <a
                             href="#"
-                            class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none dark:focus:ring-red-800"
+                            class="text-red-700 hover:text-red-800 font-medium rounded-lg text-lg px-6 py-3 underline focus:outline-none "
                         >
                             Browse All Doctors
                         </a>
@@ -593,14 +589,12 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Support Section (Feedback Form) -->
-            <section id="contact" class="bg-gray-50  py-28">
+            <section id="contact" class="bg-gray-50 py-28">
                 <div class="max-w-screen-lg mx-auto px-4">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <!-- Left: Introductory Text -->
                         <div class="flex flex-col justify-center">
-                            <h2
-                                class="text-3xl font-bold text-gray-900  mb-8"
-                            >
+                            <h2 class="text-3xl font-bold text-gray-900 mb-8">
                                 We Value Your Feedback
                             </h2>
 
@@ -610,9 +604,7 @@ function getChatbotResponse(userInput) {
                                 alt="Feedback"
                                 class="w-32 h-32 rounded-full mb-8 object-cover"
                             />
-                            <p
-                                class="text-lg text-gray-600 mb-8"
-                            >
+                            <p class="text-lg text-gray-600 mb-8">
                                 Please let us know how we can improve our
                                 services and your experience with us. Your
                                 feedback is important in helping us serve you
@@ -624,53 +616,53 @@ function getChatbotResponse(userInput) {
                         <div>
                             <form
                                 @submit.prevent="submitFeedback"
-                                class="bg-white  p-8 rounded-lg shadow-lg"
+                                class="bg-white p-8 rounded-lg shadow-lg"
                             >
                                 <div class="mb-6">
                                     <label
                                         for="name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 "
+                                        class="block mb-2 text-sm font-medium text-gray-900"
                                         >Name</label
                                     >
                                     <TextInput
                                         v-model="feedback.name"
                                         type="text"
                                         id="name"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border rounded-lg bg-gray-100  text-gray-900"
                                         required
                                     />
                                 </div>
                                 <div class="mb-6">
                                     <label
                                         for="email"
-                                        class="block mb-2 text-sm font-medium text-gray-900 "
+                                        class="block mb-2 text-sm font-medium text-gray-900"
                                         >Email</label
                                     >
                                     <TextInput
                                         v-model="feedback.email"
                                         type="email"
                                         id="email"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border rounded-lg bg-gray-100  text-gray-900"
                                         required
                                     />
                                 </div>
                                 <div class="mb-6">
                                     <label
                                         for="message"
-                                        class="block mb-2 text-sm font-medium text-gray-900 "
+                                        class="block mb-2 text-sm font-medium text-gray-900"
                                         >Message</label
                                     >
                                     <textarea
                                         v-model="feedback.message"
                                         id="message"
                                         rows="5"
-                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 "
                                         required
                                     ></textarea>
                                 </div>
                                 <Link
                                     :href="route('register')"
-                                    class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
+                                    class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300  focus:outline-none "
                                 >
                                     Submit Feedback
                                 </Link>
@@ -682,13 +674,10 @@ function getChatbotResponse(userInput) {
 
             <!-- Testimonials Section -->
 
-            <section
-                id="testimonials"
-                class="bg-gray-100  py-28"
-            >
+            <section id="testimonials" class="bg-gray-100 py-28">
                 <div class="max-w-screen-lg mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900  mb-12 text-center"
+                        class="text-3xl font-bold text-gray-900 mb-12 text-center"
                     >
                         What Our Patients Say
                     </h2>
@@ -697,26 +686,22 @@ function getChatbotResponse(userInput) {
                         <div
                             v-for="testimonial in testimonials"
                             :key="testimonial.id"
-                            class="bg-gray-50  p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
+                            class="bg-gray-50 p-6 rounded-lg shadow-lg min-w-[300px] mb-2"
                         >
                             <div class="flex items-center mb-4">
                                 <div>
                                     <h3
-                                        class="text-xl font-semibold text-gray-900 "
+                                        class="text-xl font-semibold text-gray-900"
                                     >
                                         {{ testimonial.user.name }}
                                     </h3>
-                                    <p
-                                        class="text-sm text-gray-600"
-                                    >
+                                    <p class="text-sm text-gray-600">
                                         {{ testimonial.user.role }}
                                     </p>
                                 </div>
                             </div>
                             <!-- Testimonial Message -->
-                            <p
-                                class="testimonial-message text-gray-600"
-                            >
+                            <p class="testimonial-message text-gray-600">
                                 "{{ testimonial.message }}"
                             </p>
                         </div>
@@ -776,7 +761,11 @@ function getChatbotResponse(userInput) {
             @click="openChatbot"
             class="fixed bottom-4 right-4 text-white p-3 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 transition"
         >
-            <img src="/chatbot.png" alt="Chatbot" class="w-12 h-12 rounded-full" />
+            <img
+                src="/chatbot.png"
+                alt="Chatbot"
+                class="w-12 h-12 rounded-full"
+            />
         </button>
 
         <!-- Chatbot Modal -->
@@ -784,11 +773,18 @@ function getChatbotResponse(userInput) {
             v-if="isChatbotOpen"
             class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
         >
-            <div class="bg-white w-full max-w-md rounded-lg shadow-lg overflow-hidden">
+            <div
+                class="bg-white w-full max-w-md rounded-lg shadow-lg overflow-hidden"
+            >
                 <!-- Modal Header -->
-                <div class="bg-blue-600 text-white px-4 py-2 flex justify-between items-center">
+                <div
+                    class="bg-blue-600 text-white px-4 py-2 flex justify-between items-center"
+                >
                     <h2 class="text-lg">Chatbot</h2>
-                    <button @click="closeChatbot" class="text-white hover:text-gray-200">
+                    <button
+                        @click="closeChatbot"
+                        class="text-white hover:text-gray-200"
+                    >
                         ✖
                     </button>
                 </div>
@@ -796,11 +792,12 @@ function getChatbotResponse(userInput) {
                 <!-- Chat Interface -->
                 <div class="p-4 h-96 overflow-y-auto bg-gray-50">
                     <!-- Messages -->
-                    <div v-for="(message, index) in messages" :key="index" class="mb-4">
-                        <div
-                            v-if="message.type === 'user'"
-                            class="text-right"
-                        >
+                    <div
+                        v-for="(message, index) in messages"
+                        :key="index"
+                        class="mb-4"
+                    >
+                        <div v-if="message.type === 'user'" class="text-right">
                             <p
                                 class="inline-block bg-blue-500 text-white rounded-lg px-3 py-2"
                             >
@@ -897,7 +894,6 @@ section p {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
 
 ::-webkit-scrollbar {
     width: 5px;

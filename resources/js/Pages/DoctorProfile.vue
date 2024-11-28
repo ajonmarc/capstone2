@@ -143,8 +143,7 @@ const bookSchedule = (schedule, start_time) => {
 <template>
     <Head title="Patient Dashboard" />
     <header>
-        <nav
-            class="bg-white border-red-200 dark:bg-red-900 fixed top-0 w-full z-50"
+        <nav class="bg-white  fixed top-0 w-full z-50"
         >
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -161,18 +160,17 @@ const bookSchedule = (schedule, start_time) => {
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                    >
-                        {{ header.title }}
-                    </span>
+                            class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
+                        >
+                            {{ header.title }}
+                        </span>
                 </Link>
                 <div
                     class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
-                        aria-controls="navbar-cta"
+                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-expanded="false"
                     >
                         <span class="sr-only">Open main menu</span>
@@ -244,7 +242,7 @@ const bookSchedule = (schedule, start_time) => {
                     id="navbar-cta"
                 >
                     <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-100 rounded-lg bg-red-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-red-800 md:dark:bg-red-900 dark:border-red-700"
+                          class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
                     >
                         <li>
                             <NavLink
@@ -313,10 +311,10 @@ const bookSchedule = (schedule, start_time) => {
     </header>
 
     <PatientLayout>
-        <section id="doctor-profile" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="doctor-profile" class="bg-gray-50  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     Dr. {{ doctor.docname }}
                 </h2>
@@ -324,7 +322,7 @@ const bookSchedule = (schedule, start_time) => {
                 <div class="grid grid-cols-1 lg:grid-cols-1 gap-8">
                     <!-- Doctor Info -->
                     <div
-                        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                        class="bg-white  p-6 rounded-lg shadow-lg"
                     >
                         <img
                             :src="'/doctorimage/' + doctor.docimage"
@@ -332,23 +330,23 @@ const bookSchedule = (schedule, start_time) => {
                             class="w-28 h-28 mx-auto rounded-full mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
                         >
                             {{ doctor.docname }}
                         </h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600 ">
                             <i class="fas fa-bed mr-2 text-yellow-500"></i
                             >{{ doctor.docroom }}
                         </p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600 ">
                             <i class="fas fa-building mr-2 text-gray-500"></i
                             >{{ doctor.docdep }}
                         </p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600 ">
                             <i class="fas fa-heartbeat mr-2 text-red-500"></i
                             >{{ doctor.docspec }}
                         </p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600 ">
                             <i class="fas fa-phone mr-2 text-blue-500"></i
                             >{{ doctor.docphone }}
                         </p>
@@ -356,10 +354,10 @@ const bookSchedule = (schedule, start_time) => {
 
                     <!-- Doctor Schedule -->
                     <div
-                        class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg"
+                        class="bg-white  relative shadow-md sm:rounded-lg"
                     >
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4 mt-4 text-center"
+                            class="text-xl font-semibold text-gray-900  mb-4 mt-4 text-center"
                         >
                             Schedule
                         </h3>
@@ -381,7 +379,7 @@ const bookSchedule = (schedule, start_time) => {
                                         >
                                             <svg
                                                 aria-hidden="true"
-                                                class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                                class="w-5 h-5 text-gray-500 "
                                                 fill="currentColor"
                                                 viewbox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -396,7 +394,7 @@ const bookSchedule = (schedule, start_time) => {
                                         <input
                                             type="text"
                                             id="simple-search"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                             placeholder="Search"
                                             v-model="searchQuery"
                                             @input="handleInputChange"
@@ -409,10 +407,10 @@ const bookSchedule = (schedule, start_time) => {
                         <!-- Schedule Table -->
                         <div class="overflow-x-auto">
                             <table
-                                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                                class="w-full text-sm text-left text-gray-500 "
                             >
                                 <thead
-                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                                    class="text-xs text-gray-700 uppercase bg-gray-50"
                                 >
                                     <tr>
                                         <th scope="col" class="px-4 py-3">
@@ -444,7 +442,7 @@ const bookSchedule = (schedule, start_time) => {
                                     <tr
                                         v-for="schedule in schedules.data"
                                         :key="schedule.id"
-                                        class="border-b dark:border-gray-700"
+                                        class="border-b "
                                     >
                                         <td class="px-4 py-3">
                                             <span>{{
@@ -536,18 +534,18 @@ const bookSchedule = (schedule, start_time) => {
                                     aria-label="Table navigation"
                                 >
                                     <span
-                                        class="text-sm font-normal text-gray-500 dark:text-gray-400"
+                                        class="text-sm font-normal text-gray-500 "
                                     >
                                         Showing
                                         <span
-                                            class="font-semibold text-gray-900 dark:text-white"
+                                            class="font-semibold text-gray-900 "
                                             >{{ schedules.from }}-{{
                                                 schedules.to
                                             }}</span
                                         >
                                         of
                                         <span
-                                            class="font-semibold text-gray-900 dark:text-white"
+                                            class="font-semibold text-gray-900 "
                                             >{{ schedules.total }}</span
                                         >
                                     </span>
@@ -566,7 +564,7 @@ const bookSchedule = (schedule, start_time) => {
                                                     'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                     link.active
                                                         ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                        : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                                        : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700',
                                                 ]"
                                                 v-html="link.label"
                                                 @click.prevent="
