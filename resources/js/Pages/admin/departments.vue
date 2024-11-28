@@ -373,19 +373,28 @@ const deleteDepartment = (department) => {
                                         >{{ departments.total }}</span
                                     >
                                 </span>
-                                <ul v-if="departments.links.length" class="inline-flex items-stretch -space-x-px">
-    <li v-for="(link, index) in departments.links" :key="index">
-        <a
-            href="#"
-            :class="[
-                'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
-                link.active ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100' : 'text-gray-500 bg-white border-gray-300 hover:text-gray-700',
-            ]"
-            v-html="link.label"
-            @click.prevent="goToPage(link.url)"
-        ></a>
-    </li>
-</ul>
+                                <ul
+                                    class="inline-flex items-stretch -space-x-px"
+                                >
+                                    <li
+                                        v-for="(
+                                            link, index
+                                        ) in departments.links"
+                                        :key="index"
+                                    >
+                                        <a
+                                            href="#"
+                                            :class="[
+                                                'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
+                                                link.active
+                                                    ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                            ]"
+                                            v-html="link.label"
+                                            @click.prevent="goToPage(link.url)"
+                                        ></a>
+                                    </li>
+                                </ul>
 
                             </nav>
                         </div>

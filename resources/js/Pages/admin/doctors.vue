@@ -514,7 +514,7 @@ const deleteDoctor = (doctor) => {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400 hover:-700 hover:',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"
