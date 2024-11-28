@@ -546,7 +546,7 @@ function getChatbotResponse(userInput) {
                                 class="w-28 h-28 mx-auto rounded-full mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-300 mb-2 text-center"
+                                class="text-xl font-semibold text-gray-900 mb-2 text-center"
                             >
                                 {{ doctor.docname }}
                             </h3>
