@@ -373,28 +373,20 @@ const deleteDepartment = (department) => {
                                         >{{ departments.total }}</span
                                     >
                                 </span>
-                                <ul
-                                    class="inline-flex items-stretch -space-x-px"
-                                >
-                                    <li
-                                        v-for="(
-                                            link, index
-                                        ) in departments.links"
-                                        :key="index"
-                                    >
-                                        <a
-                                            href="#"
-                                            :class="[
-                                                'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
-                                                link.active
-                                                    ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400 hover:-700 hover:',
-                                            ]"
-                                            v-html="link.label"
-                                            @click.prevent="goToPage(link.url)"
-                                        ></a>
-                                    </li>
-                                </ul>
+                                <ul v-if="departments.links.length" class="inline-flex items-stretch -space-x-px">
+    <li v-for="(link, index) in departments.links" :key="index">
+        <a
+            href="#"
+            :class="[
+                'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
+                link.active ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100' : 'text-gray-500 bg-white border-gray-300 hover:text-gray-700',
+            ]"
+            v-html="link.label"
+            @click.prevent="goToPage(link.url)"
+        ></a>
+    </li>
+</ul>
+
                             </nav>
                         </div>
                     </div>
