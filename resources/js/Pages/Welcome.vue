@@ -280,7 +280,7 @@ function getChatbotResponse(userInput) {
             <section id="about" class="bg-gray-50 dark:bg-gray-100 py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900 mb-8 text-center"
                     >
                         About Us
                     </h2>
