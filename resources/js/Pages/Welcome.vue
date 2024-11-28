@@ -133,9 +133,9 @@ function getChatbotResponse(userInput) {
 <template>
     <Head title="Welcome" />
     <div>
-        <header>
+        <header class="d-flex justify-content-between align-items-center">
             <nav
-                class="d-flex justify-content-between bg-white fixed top-0 w-full z-50"
+                class=" bg-white fixed top-0 w-full z-50"
             >
                 <div
                     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -166,20 +166,20 @@ function getChatbotResponse(userInput) {
                         <template v-else>
                             <Link
                                 :href="route('login')"
-                                class="text-red-800  hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                                class="text-red-800  hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none dark:focus:ring-red-800"
                             >
                                 Log in
                             </Link>
                             <Link
                                 :href="route('register')"
-                                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
                             >
                                 Register
                             </Link>
                         </template>
                         <button
                             @click="toggleMenu"
-                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
+                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400  dark:focus:ring-red-600"
                             aria-controls="navbar-cta"
                             aria-expanded="false"
                         >
@@ -269,7 +269,7 @@ function getChatbotResponse(userInput) {
                     </p>
                     <Link
                         :href="route('register')"
-                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
                     >
                         Schedule an Appointment
                     </Link>
@@ -340,13 +340,13 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Statistics Section with its own background -->
-        <section class="bg-blue-100 dark:bg-blue-900 py-20">
+        <section class="bg-blue-100 py-20">
             <div class="max-w-screen-xl mx-auto px-4">
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
                 >
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
@@ -555,7 +555,7 @@ function getChatbotResponse(userInput) {
                                 class="w-28 h-28 mx-auto rounded-full mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900  mb-2 text-center"
+                                class="text-xl font-semibold text-gray-300  mb-2 text-center"
                             >
                                 {{ doctor.docname }}
                             </h3>
@@ -593,7 +593,7 @@ function getChatbotResponse(userInput) {
             </section>
 
             <!-- Support Section (Feedback Form) -->
-            <section id="contact" class="bg-gray-50 dark:bg-gray-700 py-28">
+            <section id="contact" class="bg-gray-50  py-28">
                 <div class="max-w-screen-lg mx-auto px-4">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <!-- Left: Introductory Text -->
@@ -636,7 +636,7 @@ function getChatbotResponse(userInput) {
                                         v-model="feedback.name"
                                         type="text"
                                         id="name"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
                                         required
                                     />
                                 </div>
@@ -650,7 +650,7 @@ function getChatbotResponse(userInput) {
                                         v-model="feedback.email"
                                         type="email"
                                         id="email"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
                                         required
                                     />
                                 </div>
@@ -664,13 +664,13 @@ function getChatbotResponse(userInput) {
                                         v-model="feedback.message"
                                         id="message"
                                         rows="5"
-                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
+                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100  dark:border-gray-600 text-gray-900 "
                                         required
                                     ></textarea>
                                 </div>
                                 <Link
                                     :href="route('register')"
-                                    class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                                    class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
                                 >
                                     Submit Feedback
                                 </Link>

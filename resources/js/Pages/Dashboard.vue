@@ -95,7 +95,7 @@ const submitFeedback = () => {
 
     <header>
         <nav
-            class="bg-white border-red-200 dark:bg-red-900 fixed top-0 w-full z-50"
+            class="bg-white  fixed top-0 w-full z-50"
         >
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -112,7 +112,7 @@ const submitFeedback = () => {
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                        class="self-center text-2xl font-semibold whitespace-nowrap "
                     >
                         {{ header.title }}
                     </span>
@@ -122,7 +122,7 @@ const submitFeedback = () => {
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400  dark:focus:ring-red-600"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -287,7 +287,7 @@ const submitFeedback = () => {
                 </p>
                 <Link
                         :href="route('patient.doctors')"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-6 py-3 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
                 >
                     Schedule an Appointment
             </Link>
@@ -298,7 +298,7 @@ const submitFeedback = () => {
         <section id="about" class="bg-gray-50 dark:bg-gray-100 py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     About Us
                 </h2>
@@ -318,7 +318,7 @@ const submitFeedback = () => {
                     </div>
                     <div class="flex flex-col justify-center">
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900  mb-4"
                         >
                             Our Mission
                         </h3>
@@ -328,7 +328,7 @@ const submitFeedback = () => {
                             promoting health and well-being in our community.
                         </p>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900  mb-4"
                         >
                             Our Vision
                         </h3>
@@ -338,7 +338,7 @@ const submitFeedback = () => {
                             services through our dedicated team of specialists.
                         </p>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900  mb-4"
                         >
                             Our Values
                         </h3>
@@ -442,7 +442,7 @@ const submitFeedback = () => {
         <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     Services
                 </h2>
@@ -467,7 +467,7 @@ const submitFeedback = () => {
                             class="w-full h-20 object-contain rounded mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+                            class="text-xl font-semibold text-gray-900  mb-2"
                         >
                             {{ service.stitle }}
                         </h3>
@@ -492,7 +492,7 @@ const submitFeedback = () => {
         <section id="departments" class="bg-gray-50 dark:bg-gray-100 py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     Departments
                 </h2>
@@ -518,7 +518,7 @@ const submitFeedback = () => {
                             class="w-full h-20 object-contain rounded mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
                         >
                             {{ department.titledep }}
                         </h3>
@@ -540,7 +540,7 @@ const submitFeedback = () => {
         <section id="doctors" class="bg-gray-100 dark:bg-gray-100 py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     Our Doctors
                 </h2>
@@ -565,7 +565,7 @@ const submitFeedback = () => {
                             class="w-28 h-28 mx-auto rounded-full mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
                         >
                             {{ doctor.docname }}
                         </h3>
@@ -618,7 +618,7 @@ const submitFeedback = () => {
                     <!-- Left: Introductory Text -->
                     <div class="flex flex-col justify-center">
                         <h2
-                            class="text-3xl font-bold text-gray-900 dark:text-white mb-8"
+                            class="text-3xl font-bold text-gray-900  mb-8"
                         >
                             We Value Your Feedback
                         </h2>
@@ -647,14 +647,14 @@ const submitFeedback = () => {
                             <div class="mb-6">
                                 <label
                                     for="message"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
                                     >Message</label
                                 >
                                 <textarea
                                     v-model="feedback.message"
                                     id="message"
                                     rows="5"
-                                    class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white"
+                                    class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
                                     required
                                 ></textarea>
                             </div>
@@ -662,7 +662,7 @@ const submitFeedback = () => {
                             <!-- Submit Button -->
                             <button
                                 type="submit"
-                                class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                                class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600  focus:outline-none dark:focus:ring-red-800"
                             >
                                 Submit Feedback
                             </button>
@@ -676,7 +676,7 @@ const submitFeedback = () => {
         <section id="testimonials" class="bg-gray-100 dark:bg-gray-900 py-28">
             <div class="max-w-screen-lg mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-12 text-center"
                 >
                     What Our Patients Say
                 </h2>
@@ -690,7 +690,7 @@ const submitFeedback = () => {
                         <div class="flex items-center mb-4">
                             <div>
                                 <h3
-                                    class="text-xl font-semibold text-gray-900 dark:text-white"
+                                    class="text-xl font-semibold text-gray-900 "
                                 >
                                     {{ testimonial.user.name }}
                                 </h3>
