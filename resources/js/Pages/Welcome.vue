@@ -150,7 +150,7 @@ function getChatbotResponse(userInput) {
                         <img :src="`/headerlogo/${header.logo}`" alt="Logo" class="h-12 w-12 rounded-full" />
 
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                            class="self-center text-2xl font-semibold whitespace-nowrap  d-none d-sm-block"
                         >
                             {{ header.title }}
                         </span>
@@ -166,7 +166,7 @@ function getChatbotResponse(userInput) {
                         <template v-else>
                             <Link
                                 :href="route('login')"
-                                class="text-red-800 dark:text-white hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                                class="text-red-800  hover:bg-red-50 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
                             >
                                 Log in
                             </Link>
@@ -300,7 +300,7 @@ function getChatbotResponse(userInput) {
                         </div>
                         <div class="flex flex-col justify-center">
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                                class="text-xl font-semibold text-gray-900  mb-4"
                             >
                                 Our Mission
                             </h3>
@@ -311,7 +311,7 @@ function getChatbotResponse(userInput) {
                                 community.
                             </p>
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                                class="text-xl font-semibold text-gray-900  mb-4"
                             >
                                 Our Vision
                             </h3>
@@ -322,7 +322,7 @@ function getChatbotResponse(userInput) {
                                 specialists.
                             </p>
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                                class="text-xl font-semibold text-gray-900  mb-4"
                             >
                                 Our Values
                             </h3>
@@ -427,7 +427,7 @@ function getChatbotResponse(userInput) {
             <section id="services" class="bg-gray-100 dark:bg-gray-100 py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
                     >
                         Services
                     </h2>
@@ -452,7 +452,7 @@ function getChatbotResponse(userInput) {
                                 class="w-full h-20 object-contain rounded mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+                                class="text-xl font-semibold text-gray-900  mb-2"
                             >
                                 {{ service.stitle }}
                             </h3>
@@ -479,7 +479,7 @@ function getChatbotResponse(userInput) {
             <section id="departments" class="bg-gray-50 dark:bg-gray-100 py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
                     >
                         Departments
                     </h2>
@@ -506,7 +506,7 @@ function getChatbotResponse(userInput) {
                                     class="w-full h-20 object-contain rounded mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                                class="text-xl font-semibold text-gray-900  mb-2 text-center"
                             >
                                 {{ department.titledep }}
                             </h3>
@@ -529,7 +529,7 @@ function getChatbotResponse(userInput) {
             <section id="doctors" class="bg-gray-100 dark:bg-gray-100 py-28">
                 <div class="max-w-screen-xl mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                        class="text-3xl font-bold text-gray-900  mb-8 text-center"
                     >
                         Our Doctors
                     </h2>
@@ -555,7 +555,7 @@ function getChatbotResponse(userInput) {
                                 class="w-28 h-28 mx-auto rounded-full mb-4"
                             />
                             <h3
-                                class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                                class="text-xl font-semibold text-gray-900  mb-2 text-center"
                             >
                                 {{ doctor.docname }}
                             </h3>
@@ -599,7 +599,7 @@ function getChatbotResponse(userInput) {
                         <!-- Left: Introductory Text -->
                         <div class="flex flex-col justify-center">
                             <h2
-                                class="text-3xl font-bold text-gray-900 dark:text-white mb-8"
+                                class="text-3xl font-bold text-gray-900  mb-8"
                             >
                                 We Value Your Feedback
                             </h2>
@@ -629,42 +629,42 @@ function getChatbotResponse(userInput) {
                                 <div class="mb-6">
                                     <label
                                         for="name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        class="block mb-2 text-sm font-medium text-gray-900 "
                                         >Name</label
                                     >
                                     <TextInput
                                         v-model="feedback.name"
                                         type="text"
                                         id="name"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white"
+                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
                                         required
                                     />
                                 </div>
                                 <div class="mb-6">
                                     <label
                                         for="email"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        class="block mb-2 text-sm font-medium text-gray-900 "
                                         >Email</label
                                     >
                                     <TextInput
                                         v-model="feedback.email"
                                         type="email"
                                         id="email"
-                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white"
+                                        class="block w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
                                         required
                                     />
                                 </div>
                                 <div class="mb-6">
                                     <label
                                         for="message"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        class="block mb-2 text-sm font-medium text-gray-900 "
                                         >Message</label
                                     >
                                     <textarea
                                         v-model="feedback.message"
                                         id="message"
                                         rows="5"
-                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white"
+                                        class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 "
                                         required
                                     ></textarea>
                                 </div>
@@ -688,7 +688,7 @@ function getChatbotResponse(userInput) {
             >
                 <div class="max-w-screen-lg mx-auto px-4">
                     <h2
-                        class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+                        class="text-3xl font-bold text-gray-900  mb-12 text-center"
                     >
                         What Our Patients Say
                     </h2>
@@ -702,7 +702,7 @@ function getChatbotResponse(userInput) {
                             <div class="flex items-center mb-4">
                                 <div>
                                     <h3
-                                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                                        class="text-xl font-semibold text-gray-900 "
                                     >
                                         {{ testimonial.user.name }}
                                     </h3>
