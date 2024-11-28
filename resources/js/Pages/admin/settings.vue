@@ -235,7 +235,7 @@ const closeModal = () => {
                 <input
                     id="title"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="title"
                     v-model="form.title"
                     autofocus
@@ -255,7 +255,7 @@ const closeModal = () => {
                     id="logo"
                     type="file"
                     @input="form.logo = $event.target.files[0]"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="logo"
                     autofocus
                     autocomplete="logo"
@@ -271,7 +271,7 @@ const closeModal = () => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+                class=" bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
             >
                 Submit
             </button>
@@ -293,7 +293,7 @@ const closeModal = () => {
                 <input
                     id="fbname"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="fbname"
                     v-model="form.fbname"
                     autofocus
@@ -312,7 +312,7 @@ const closeModal = () => {
                 <input
                     id="contact"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="contact"
                     v-model="form.contact"
                     autofocus
@@ -331,7 +331,7 @@ const closeModal = () => {
                 <input
                     id="place"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="place"
                     v-model="form.place"
                     autofocus
@@ -348,7 +348,7 @@ const closeModal = () => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+                class=" bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
             >
                 Submit
             </button>
@@ -365,13 +365,13 @@ const closeModal = () => {
                     HEADER
                 </div>
                 <div
-                    class="bg-white bg-gray-800 relative shadow-md sm:rounded-lg"
+                    class="bg-white -800 relative shadow-md sm:rounded-lg"
                 >
                     <!-- Add User Button -->
                     <button 
                         type="button"
                         @click="openAddH"
-                        class="ml-2 mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-blue-800"
+                        class="ml-2 mt-2  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-blue-800"
                     >
                         Add
                     </button>
@@ -381,7 +381,7 @@ const closeModal = () => {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">Title</th>
@@ -445,7 +445,7 @@ const closeModal = () => {
                     FOOTER
                 </div>
                 <div
-                    class="bg-white bg-gray-800 relative shadow-md sm:rounded-lg"
+                    class="bg-white -800 relative shadow-md sm:rounded-lg"
                 >
                     <addfooter />
 
@@ -454,7 +454,7 @@ const closeModal = () => {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">

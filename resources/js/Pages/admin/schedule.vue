@@ -61,7 +61,7 @@ function goToPage(url) {
                 SCHEDULE
             </div>
             <div
-                class="bg-white bg-gray-800 relative shadow-md sm:rounded-lg"
+                class="bg-white -800 relative shadow-md sm:rounded-lg"
             >
                 <div
                     class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
@@ -94,7 +94,7 @@ function goToPage(url) {
                                 <input
                                     type="text"
                                     id="simple-search"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+                                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2  border-gray-600 placeholder-gray-400  focus:ring-primary-500 focus:border-primary-500"
                                     placeholder="Search"
                                     required=""
                                          v-model="searchQuery"
@@ -110,7 +110,7 @@ function goToPage(url) {
                         class="w-full text-sm text-left text-gray-500 text-gray-400"
                     >
                         <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400"
+                            class="text-xs text-gray-700 uppercase -50  text-gray-400"
                         >
                             <tr>
                                 <th scope="col" class="px-4 py-3">Doctor Name</th>
@@ -221,14 +221,14 @@ function goToPage(url) {
                                 >
                                     Showing
                                     <span
-                                        class="font-semibold text-gray-900 text-white"
+                                        class="font-semibold text-gray-900 "
                                         >{{ schedules.from }}-{{
                                             schedules.to
                                         }}</span
                                     >
                                     of
                                     <span
-                                        class="font-semibold text-gray-900 text-white"
+                                        class="font-semibold text-gray-900 "
                                         >{{ schedules.total }}</span
                                     >
                                 </span>
@@ -247,7 +247,7 @@ function goToPage(url) {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400 hover: hover:',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"
