@@ -385,51 +385,77 @@ class HomeController extends Controller
 
     public function dashboard(): Response
     {
-        $headers = Header::all();
-        $footers = Footer::all();
-        $footers = Footer::all();
-        $services = Service::all();
-        $departments = Department::all();
-        $doctors = Doctor::all();
+       
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
 
+            $headers = Header::all();
+            $footers = Footer::all();
+            $footers = Footer::all();
+            $services = Service::all();
+            $departments = Department::all();
+            $doctors = Doctor::all();
+    
+            $bookCount=Booking::where('user_id', $userid)->count();
+            $doctorCount = Doctor::count();
+            $departmentCount = Department::count();
+            $researchlabCount = Research_lab::count();
+            $awardCount = Award::count();
+    
+            // Eager load the 'user' relationship to get the user's name
+            $testimonials = Testimonial::with('user')->get();
+    
+            return Inertia::render('Dashboard', [
+    
+                'headers' => $headers,
+                'footers' => $footers,
+                'services' => $services,
+                'departments' => $departments,
+                'doctors' => $doctors,
+                'testimonials' => $testimonials,
+                'doctorCount' => $doctorCount,
+                'departmentCount' => $departmentCount,
+                'researchlabCount' => $researchlabCount,
+                'awardCount' => $awardCount,
 
-        $doctorCount = Doctor::count();
-        $departmentCount = Department::count();
-        $researchlabCount = Research_lab::count();
-        $awardCount = Award::count();
+                'bookCount' => $bookCount,
+    
+            ]);
 
-        // Eager load the 'user' relationship to get the user's name
-        $testimonials = Testimonial::with('user')->get();
-
-        return Inertia::render('Dashboard', [
-
-            'headers' => $headers,
-            'footers' => $footers,
-            'services' => $services,
-            'departments' => $departments,
-            'doctors' => $doctors,
-            'testimonials' => $testimonials,
-
-
-            'doctorCount' => $doctorCount,
-            'departmentCount' => $departmentCount,
-            'researchlabCount' => $researchlabCount,
-            'awardCount' => $awardCount,
-
-
-        ]);
+          
+        } else {
+            // Redirect back if the user is not authenticated
+            return redirect()->back();
+        }
     }
 
     public function patientProfile(): Response
     {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $headers = Header::all();
         $footers = Footer::all();
-        return Inertia::render('patient/profile', compact('headers', 'footers',));
+        return Inertia::render('patient/profile', [
+
+            'headers' => $headers,
+            'footers' => $footers,
+            'bookCount' => $bookCount,
+
+        ]);
+
+
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
     }
 
     public function patientAbout(): Response
     {
-
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $doctorCount = Doctor::count();
         $departmentCount = Department::count();
         $researchlabCount = Research_lab::count();
@@ -446,13 +472,21 @@ class HomeController extends Controller
             'departmentCount' => $departmentCount,
             'researchlabCount' => $researchlabCount,
             'awardCount' => $awardCount,
-
+            'bookCount' => $bookCount,
 
         ]);
+
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
     }
 
     public function patientServices(): Response
     {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $headers = Header::all();
         $footers = Footer::all();
         $services = Service::all();
@@ -461,13 +495,21 @@ class HomeController extends Controller
             'headers' => $headers,
             'footers' => $footers,
             'services' => $services,
-
+            'bookCount' => $bookCount,
 
         ]);
+
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
     }
 
     public function patientDepartments(): Response
     {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $headers = Header::all();
         $footers = Footer::all();
         $departments = Department::all();
@@ -476,13 +518,21 @@ class HomeController extends Controller
             'headers' => $headers,
             'footers' => $footers,
             'departments' => $departments,
+            'bookCount' => $bookCount,
 
 
         ]);
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
     }
 
     public function patientDoctors(): Response
     {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $headers = Header::all();
         $footers = Footer::all();
         $doctors = Doctor::all();
@@ -491,17 +541,35 @@ class HomeController extends Controller
             'headers' => $headers,
             'footers' => $footers,
             'doctors' => $doctors,
+            'bookCount' => $bookCount,
 
 
         ]);
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
     }
 
     public function patientContact(): Response
     {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+            $bookCount=Booking::where('user_id', $userid)->count();
         $headers = Header::all();
         $footers = Footer::all();
-        return Inertia::render('patient/contact', compact('headers', 'footers'));
+        return Inertia::render('patient/contact',  [
+
+            'headers' => $headers,
+            'footers' => $footers,
+            'bookCount' => $bookCount,
+        ]);
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
     }
+    }
+
 
     public function patientMyappointment(Request $request): Response
     {
@@ -510,9 +578,10 @@ class HomeController extends Controller
         if (Auth::check()) {
             $userid = Auth::user()->id;
 
+       
+            $bookCount=Booking::where('user_id', $userid)->count();
             $headers = Header::all();
             $footers = Footer::all();
-        
             // Get the search term from the request
             $search = $request->input('search');
         
@@ -532,6 +601,7 @@ class HomeController extends Controller
                 'search' => $search,
                 'headers' => $headers,
                 'footers' => $footers,
+                'bookCount' => $bookCount,
             ]);
         } else {
             // Redirect back if the user is not authenticated
@@ -539,6 +609,78 @@ class HomeController extends Controller
         }
     
     }
+
+    
+    public function showByDepartment($departmentId)
+    {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+
+       
+            $bookCount=Booking::where('user_id', $userid)->count();
+
+        $headers = Header::all();
+        $footers = Footer::all();
+        // Fetch the department by its ID
+        $department = Department::findOrFail($departmentId);
+
+        // Fetch doctors where 'docdep' matches the department's 'titledep'
+        $doctors = Doctor::where('docdep', $department->titledep)->get();
+
+        // Return data to Inertia
+        return Inertia::render('patient/dept_doc', [
+            'department' => $department,
+            'doctors' => $doctors,
+            'headers' => $headers,
+            'footers' => $footers,
+            'bookCount' => $bookCount,
+        ]);
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
+    }
+
+
+    public function showDoctor(Request $request, $docname)
+    {
+        if (Auth::check()) {
+            $userid = Auth::user()->id;
+
+       
+            $bookCount=Booking::where('user_id', $userid)->count();
+        $headers = Header::all();
+        $footers = Footer::all();
+    
+        $doctor = Doctor::where('docname', $docname)->firstOrFail();
+    
+        // Get the search term from the request
+        $search = $request->input('search');
+    
+        // Fetch schedules and include booking count logic
+        $schedules = Schedule::where('docname', $doctor->docname)
+            ->when($search, function ($query, $search) {
+                $query->where('start_date', 'like', "%{$search}%")
+                    ->orWhere('end_time', 'like', "%{$search}%")
+                    ->orWhere('status', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->paginate(10);
+    
+        return Inertia::render('DoctorProfile', [
+            'search' => $search,
+            'doctor' => $doctor,
+            'schedules' => $schedules,
+            'headers' => $headers,
+            'footers' => $footers,
+            'bookCount' => $bookCount,
+        ]);
+    } else {
+        // Redirect back if the user is not authenticated
+        return redirect()->back();
+    }
+    }
+
 
     
     // <!--patient here..--!>
@@ -640,55 +782,6 @@ class HomeController extends Controller
 
 
 
-
-    public function showByDepartment($departmentId)
-    {
-        $headers = Header::all();
-        $footers = Footer::all();
-        // Fetch the department by its ID
-        $department = Department::findOrFail($departmentId);
-
-        // Fetch doctors where 'docdep' matches the department's 'titledep'
-        $doctors = Doctor::where('docdep', $department->titledep)->get();
-
-        // Return data to Inertia
-        return Inertia::render('patient/dept_doc', [
-            'department' => $department,
-            'doctors' => $doctors,
-            'headers' => $headers,
-            'footers' => $footers,
-        ]);
-    }
-
-
-    public function showDoctor(Request $request, $docname)
-    {
-        $headers = Header::all();
-        $footers = Footer::all();
-    
-        $doctor = Doctor::where('docname', $docname)->firstOrFail();
-    
-        // Get the search term from the request
-        $search = $request->input('search');
-    
-        // Fetch schedules and include booking count logic
-        $schedules = Schedule::where('docname', $doctor->docname)
-            ->when($search, function ($query, $search) {
-                $query->where('start_date', 'like', "%{$search}%")
-                    ->orWhere('end_time', 'like', "%{$search}%")
-                    ->orWhere('status', 'like', "%{$search}%");
-            })
-            ->latest()
-            ->paginate(10);
-    
-        return Inertia::render('DoctorProfile', [
-            'search' => $search,
-            'doctor' => $doctor,
-            'schedules' => $schedules,
-            'headers' => $headers,
-            'footers' => $footers,
-        ]);
-    }
 
 
 

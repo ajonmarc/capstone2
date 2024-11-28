@@ -33,6 +33,11 @@ defineProps({
         required: true,
     },
 
+    bookCount: {
+        type: Number,
+        required: true,
+    },
+
     departmentCount: {
         type: Number,
         required: true,
@@ -107,7 +112,7 @@ const submitFeedback = () => {
                     <span
                         class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
                     >
-                        {{ header.title }}
+                        {{ header.title }} 
                     </span>
                 </Link>
                 <div
@@ -248,6 +253,12 @@ const submitFeedback = () => {
                                 "
                             >
                                 My Appointment
+                                <span
+                                    v-if="bookCount > 0"
+                                    class="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-sm"
+                                >
+                                    {{ bookCount }}
+                                </span>
                             </NavLink>
                         </li>
                     </ul>

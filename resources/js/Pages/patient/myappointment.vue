@@ -15,6 +15,13 @@ const props = defineProps({
     search: String,
     headers: Array,
     footers: Array,
+
+
+
+    bookCount: {
+        type: Number,
+        required: true,
+    },
 });
 
 // Reactive data for search query
@@ -92,9 +99,7 @@ const deleteAppointment = (booking) => {
 <template>
     <Head title="Patient Dashboard" />
     <header>
-        <nav
-            class="bg-white fixed top-0 w-full z-50"
-        >
+        <nav class="bg-white fixed top-0 w-full z-50">
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
             >
@@ -110,17 +115,17 @@ const deleteAppointment = (booking) => {
                         class="h-12 w-12 rounded-full"
                     />
                     <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
-                        >
-                            {{ header.title }}
-                        </span>
+                        class="self-center text-2xl font-semibold whitespace-nowrap truncate hidden sm:block"
+                    >
+                        {{ header.title }}
+                    </span>
                 </Link>
                 <div
                     class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
                 >
                     <button
                         @click="toggleMenu"
-                          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -224,7 +229,7 @@ const deleteAppointment = (booking) => {
                                 :href="route('patient.departments')"
                                 :active="route().current('patient.departments')"
                             >
-                            Departments
+                                Departments
                             </NavLink>
                         </li>
                         <li>
@@ -253,6 +258,12 @@ const deleteAppointment = (booking) => {
                                 "
                             >
                                 My Appointment
+                                <span
+                                    v-if="bookCount > 0"
+                                    class="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-sm"
+                                >
+                                    {{ bookCount }}
+                                </span>
                             </NavLink>
                         </li>
                     </ul>
@@ -262,17 +273,13 @@ const deleteAppointment = (booking) => {
     </header>
 
     <PatientLayout>
-        <section class="bg-gray-100  py-28">
+        <section class="bg-gray-100 py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     My appointment
                 </h2>
 
-                <div
-                    class="bg-white  relative shadow-md sm:rounded-lg"
-                >
+                <div class="bg-white relative shadow-md sm:rounded-lg">
                     <div
                         class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
                     >
@@ -290,7 +297,7 @@ const deleteAppointment = (booking) => {
                                     >
                                         <svg
                                             aria-hidden="true"
-                                            class="w-5 h-5 text-gray-500 "
+                                            class="w-5 h-5 text-gray-500"
                                             fill="currentColor"
                                             viewbox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -317,11 +324,9 @@ const deleteAppointment = (booking) => {
                     </div>
                     <!-- appointment Table -->
                     <div class="overflow-x-auto">
-                        <table
-                            class="w-full text-sm text-left text-gray-500 "
-                        >
+                        <table class="w-full text-sm text-left text-gray-500">
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 "
+                                class="text-xs text-gray-700 uppercase bg-gray-50"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">
@@ -355,7 +360,7 @@ const deleteAppointment = (booking) => {
                                 <tr
                                     v-for="booking in bookings.data"
                                     :key="booking.id"
-                                    class="border-b "
+                                    class="border-b"
                                 >
                                     <td class="px-4 py-3">
                                         {{ booking.doc_name }}
@@ -377,16 +382,15 @@ const deleteAppointment = (booking) => {
                                         >
                                         <!-- Day Type -->
 
-
-
                                         <span>{{
-                                        new Date(
-                                            "1970-01-01T" + booking.start_time
-                                        ).toLocaleTimeString([], {
-                                            hour: "2-digit",
-                                            minute: "2-digit",
-                                        })
-                                    }}</span>
+                                            new Date(
+                                                "1970-01-01T" +
+                                                    booking.start_time
+                                            ).toLocaleTimeString([], {
+                                                hour: "2-digit",
+                                                minute: "2-digit",
+                                            })
+                                        }}</span>
                                     </td>
 
                                     <td class="px-4 py-3">
@@ -433,21 +437,17 @@ const deleteAppointment = (booking) => {
                                 class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
                                 aria-label="Table navigation"
                             >
-                                <span
-                                    class="text-sm font-normal text-gray-500 "
-                                >
+                                <span class="text-sm font-normal text-gray-500">
                                     Showing
-                                    <span
-                                        class="font-semibold text-gray-900 "
+                                    <span class="font-semibold text-gray-900"
                                         >{{ bookings.from }}-{{
                                             bookings.to
                                         }}</span
                                     >
                                     of
-                                    <span
-                                        class="font-semibold text-gray-900 "
-                                        >{{ bookings.total }}</span
-                                    >
+                                    <span class="font-semibold text-gray-900">{{
+                                        bookings.total
+                                    }}</span>
                                 </span>
                                 <ul
                                     class="inline-flex items-stretch -space-x-px"

@@ -14,9 +14,13 @@ const props = defineProps({
     doctor: Object,
     schedules: Object,
     search: String,
-
     headers: Array,
     footers: Array,
+
+    bookCount: {
+        type: Number,
+        required: true,
+    },
 });
 
 // Reactive data for search query
@@ -302,6 +306,12 @@ const bookSchedule = (schedule, start_time) => {
                                 "
                             >
                                 My Appointment
+                                <span
+                                    v-if="bookCount > 0"
+                                    class="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-sm"
+                                >
+                                    {{ bookCount }}
+                                </span>
                             </NavLink>
                         </li>
                     </ul>

@@ -14,6 +14,11 @@ import Swal from "sweetalert2";
 defineProps({
     headers: Array,
     footers: Array,
+
+    bookCount: {
+        type: Number,
+        required: true,
+    },
 });
 
 const isMenuOpen = ref(false);
@@ -219,6 +224,12 @@ feedback.post("/submit-feedback", {
                                 "
                             >
                                 My Appointment
+                                <span
+                                    v-if="bookCount > 0"
+                                    class="ml-2 bg-red-500 text-white rounded-full px-2 py-1 text-sm"
+                                >
+                                    {{ bookCount }}
+                                </span>
                             </NavLink>
                         </li>
                     </ul>
