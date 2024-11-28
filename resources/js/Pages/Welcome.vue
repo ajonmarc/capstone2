@@ -135,7 +135,7 @@ function getChatbotResponse(userInput) {
     <div>
         <header>
             <nav
-                class="bg-white border-red-200 dark:bg-red-900 fixed top-0 w-full z-50"
+                class="d-flex justify-content-between bg-white fixed top-0 w-full z-50"
             >
                 <div
                     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
