@@ -76,7 +76,7 @@ const toggleMenu = () => {
                 >
                     <button
                         @click="toggleMenu"
-                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -219,15 +219,15 @@ const toggleMenu = () => {
     
     <PatientLayout>
         <!-- About Us Section -->
-        <section id="about" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="about" class="bg-gray-50 ">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900 mb-8 text-center"
                 >
                     About Us
                 </h2>
                 <p
-                    class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center"
+                    class="text-lg text-gray-600  mb-8 text-center"
                 >
                     Learn more about our mission, vision, and the core values
                     that drive us to provide the best healthcare services in our
@@ -242,32 +242,32 @@ const toggleMenu = () => {
                     </div>
                     <div class="flex flex-col justify-center">
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900  mb-4"
                         >
                             Our Mission
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        <p class="text-gray-600  mb-6">
                             At Surigao Health Specialists' Inc., our mission is
                             to provide patient-centered, compassionate care,
                             promoting health and well-being in our community.
                         </p>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900  mb-4"
                         >
                             Our Vision
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        <p class="text-gray-600  mb-6">
                             To be the leading healthcare provider in the region,
                             offering innovative and comprehensive medical
                             services through our dedicated team of specialists.
                         </p>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+                            class="text-xl font-semibold text-gray-900 mb-4"
                         >
                             Our Values
                         </h3>
                         <ul
-                            class="list-disc pl-4 text-gray-600 dark:text-gray-400"
+                            class="list-disc pl-4 text-gray-600 "
                         >
                             <li>Compassionate Care</li>
                             <li>Innovation in Treatment</li>
@@ -280,13 +280,13 @@ const toggleMenu = () => {
         </section>
 
         <!-- Statistics Section with its own background -->
-        <section class="bg-blue-100 dark:bg-blue-900 py-20">
+        <section class="bg-blue-100  py-20">
             <div class="max-w-screen-xl mx-auto px-4">
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
                 >
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
@@ -296,16 +296,16 @@ const toggleMenu = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Doctors
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600">
                             {{ doctorCount }} specialists
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
@@ -315,16 +315,16 @@ const toggleMenu = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Departments
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600">
                             {{ departmentCount }}  specialized departments
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center"
@@ -334,16 +334,16 @@ const toggleMenu = () => {
                             ></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Research Labs
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600">
                             {{ researchlabCount }}  advanced labs
                         </p>
                     </div>
                     <div
-                        class="bg-white dark:bg-gray-200 p-6 rounded-lg shadow-md"
+                        class="bg-white  p-6 rounded-lg shadow-md"
                     >
                         <div
                             class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center"
@@ -351,11 +351,11 @@ const toggleMenu = () => {
                             <i class="fas fa-award text-red-500 text-3xl"></i>
                         </div>
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-gray-800"
+                            class="text-xl font-semibold text-gray-900 "
                         >
                             Awards
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-700">
+                        <p class="text-gray-600">
                             {{ awardCount }}  excellence awards
                         </p>
                     </div>

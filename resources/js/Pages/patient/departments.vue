@@ -64,7 +64,7 @@ const toggleMenu = () => {
                 >
                     <button
                         @click="toggleMenu"
-                           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -208,12 +208,12 @@ const toggleMenu = () => {
        
             <!-- Departments Section -->
           
-        <section id="departments" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="departments" class="bg-gray-50  py-28">
         <div class="max-w-screen-xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900  mb-8 text-center">
                 Departments
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center">
+            <p class="text-lg text-gray-600  mb-8 text-center">
                 Our departments are staffed by experienced professionals
                 dedicated to providing the best care in their fields.
             </p>
@@ -223,7 +223,7 @@ const toggleMenu = () => {
                     v-for="department in departments"
                     :key="department.id"
                     @click="goToDepartment(department.id)"
-                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
+                    class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
                 >
                     <img
                         :src="'/departmentimage/' + department.imagedep"
@@ -231,7 +231,7 @@ const toggleMenu = () => {
                         class="w-full h-20 object-contain rounded mb-4"
                     />
                     <h3
-                        class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                        class="text-xl font-semibold text-gray-900  mb-2 text-center"
                     >
                         {{ department.titledep }}
                     </h3>

@@ -50,7 +50,7 @@ const toggleMenu = () => {
                 >
                     <button
                         @click="toggleMenu"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -191,10 +191,10 @@ const toggleMenu = () => {
         </nav>
     </header>
     <PatientLayout>
-        <section id="doctors" class="bg-gray-50 dark:bg-gray-100 py-28">
+        <section id="doctors" class="bg-gray-50  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     Doctors in {{ department.titledep }}
                 </h2>
@@ -205,7 +205,7 @@ const toggleMenu = () => {
                 <div
                         v-for="doctor in doctors"
                         :key="doctor.id"
-                        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+                        class="bg-white  p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                     >
                         <img
                             :src="'/doctorimage/' + doctor.docimage"
@@ -213,12 +213,12 @@ const toggleMenu = () => {
                             class="w-28 h-28 mx-auto rounded-full mb-4"
                         />
                         <h3
-                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center"
+                            class="text-xl font-semibold text-gray-900  mb-2 text-center"
                         >
                             {{ doctor.docname }}
                         </h3>
                         <h3
-                            class="text-xl font-semibold text-yellow-500 dark:text-yellow mb-2 text-center"
+                            class="text-xl font-semibold text-yellow-500 mb-2 text-center"
                         >
                             <i class="fas fa-building mr-2 text-gray-500"></i>
                             {{ doctor.docroom }}
@@ -226,14 +226,14 @@ const toggleMenu = () => {
 
                         <!-- Specialization -->
                         <h3
-                            class="text-gray-600 dark:text-gray-400 text-sm mb-2 text-center"
+                            class="text-gray-600  text-sm mb-2 text-center"
                         >
                             <i class="fas fa-heartbeat mr-2 text-red-500"></i>
                             {{ doctor.docspec }}
                         </h3>
 
                         <h3
-                            class="text-gray-600 dark:text-gray-400 text-sm text-center"
+                            class="text-gray-600  text-sm text-center"
                         >
                             <i class="fas fa-phone mr-2 text-blue-500"></i>
                             {{ doctor.docphone }}

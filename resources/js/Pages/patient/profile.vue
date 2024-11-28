@@ -56,7 +56,7 @@ const toggleMenu = () => {
                 >
                     <button
                         @click="toggleMenu"
-                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -197,7 +197,7 @@ const toggleMenu = () => {
         </nav>
     </header>
     <PatientLayout>
-        <section class="profile-section bg-gray-50 dark:bg-gray-50 py-28">
+        <section class="profile-section bg-gray-50  py-28">
                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <UpdateProfileInformationForm

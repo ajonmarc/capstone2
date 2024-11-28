@@ -16,7 +16,7 @@ const showingSidebar = ref(false);
                 '-translate-x-full': !showingSidebar,
                 'translate-x-0': showingSidebar,
             }"
-            class="transform top-0 left-0 w-64 bg-blue border-r border-blue-100 p-4 fixed h-full transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 overflow-y-auto bg-blue-100 dark:bg-blue-800 z-50"
+            class="transform top-0 left-0 w-64 bg-blue border-r border-blue-100 p-4 fixed h-full transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 overflow-y-auto bg-blue-100  z-50"
         >
             <div class="flex items-center justify-between mb-5">
                 <Link
@@ -26,7 +26,7 @@ const showingSidebar = ref(false);
                     <ApplicationLogo />
 
                     <span
-                        class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+                        class="self-center text-xl font-semibold whitespace-nowrap "
                         >S.H.S.I</span
                     >
                 </Link>
@@ -54,7 +54,7 @@ const showingSidebar = ref(false);
 
             <ul class="space-y-2 font-medium">
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.dashboard') }">
-        <Link :href="route('admin.dashboard')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.dashboard')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-gauge me-2"></i>
                 Dashboard
@@ -63,7 +63,7 @@ const showingSidebar = ref(false);
     </li>
 
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.schedule') }">
-        <Link :href="route('admin.schedule')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.schedule')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-clock me-2"></i>
                 Schedules
@@ -72,7 +72,7 @@ const showingSidebar = ref(false);
     </li>
 
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.appointment') }">
-        <Link :href="route('admin.appointment')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.appointment')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-calendar-alt me-2"></i>
                 Appointments
@@ -81,7 +81,7 @@ const showingSidebar = ref(false);
     </li>
 
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.users') }">
-        <Link :href="route('admin.users')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.users')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-user me-2"></i>
                 Users
@@ -89,7 +89,7 @@ const showingSidebar = ref(false);
         </Link>
     </li>
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.rooms') }">
-    <Link :href="route('admin.rooms')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+    <Link :href="route('admin.rooms')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
         <span class="ms-3">
             <i class="fas fa-bed me-2"></i>
             Rooms
@@ -98,7 +98,7 @@ const showingSidebar = ref(false);
 </li>
 
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.departments') }">
-        <Link :href="route('admin.departments')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.departments')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-building me-2"></i>
                 Departments
@@ -107,7 +107,7 @@ const showingSidebar = ref(false);
     </li>
 
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.specialtys') }">
-    <Link :href="route('admin.specialtys')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+    <Link :href="route('admin.specialtys')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
         <span class="ms-3">
             <i class="fas fa-heartbeat me-2"></i>
             Specialty
@@ -115,7 +115,7 @@ const showingSidebar = ref(false);
     </Link>
 </li>
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.doctors') }">
-        <Link :href="route('admin.doctors')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.doctors')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-user-md me-2"></i>
                 Doctors
@@ -126,7 +126,7 @@ const showingSidebar = ref(false);
  
 
     <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.services') }">
-        <Link :href="route('admin.services')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.services')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-concierge-bell me-2"></i>
                 Services
@@ -138,7 +138,7 @@ const showingSidebar = ref(false);
 
     <!-- Research Labs Link -->
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.research_labs') }">
-    <Link :href="route('admin.research_labs')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+    <Link :href="route('admin.research_labs')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
         <span class="ms-3">
             <i class="fas fa-flask me-2"></i>
             Research Labs
@@ -148,7 +148,7 @@ const showingSidebar = ref(false);
 
 <!-- Awards Link -->
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.awards') }">
-    <Link :href="route('admin.awards')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+    <Link :href="route('admin.awards')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
         <span class="ms-3">
             <i class="fas fa-trophy me-2"></i>
             Awards
@@ -158,7 +158,7 @@ const showingSidebar = ref(false);
 
 <!-- Awards Link -->
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.testimonials') }">
-    <Link :href="route('admin.testimonials')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+    <Link :href="route('admin.testimonials')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
         <span class="ms-3">
             <i class="fas fa-star me-2"></i>
             Testimonials
@@ -170,7 +170,7 @@ const showingSidebar = ref(false);
 
 
 <li :class="{ 'bg-yellow-300 rounded-lg': route().current('admin.settings') }">
-        <Link :href="route('admin.settings')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-yellow-300 dark:hover:bg-red-700 group">
+        <Link :href="route('admin.settings')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-yellow-300  group">
             <span class="ms-3">
                 <i class="fas fa-cog me-2"></i>
                 Settings

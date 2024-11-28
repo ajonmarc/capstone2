@@ -16,13 +16,13 @@ const showingSidebar = ref(false);
                 '-translate-x-full': !showingSidebar,
                 'translate-x-0': showingSidebar,
             }"
-            class="transform top-0 left-0 w-64 bg-blue border-r border-blue-100 p-4 fixed h-full transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 overflow-y-auto bg-blue-100 dark:bg-blue-800 z-50"
+            class="transform top-0 left-0 w-64 bg-blue border-r border-blue-100 p-4 fixed h-full transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 overflow-y-auto bg-blue-100  z-50"
         >
         <div class="flex items-center justify-between mb-5">
                 <Link :href="route('doctor.dashboard')"  class="flex items-center ps-2.5">
                     <ApplicationLogo />
          
-         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">S.H.S.I</span>
+         <span class="self-center text-xl font-semibold whitespace-nowrap ">S.H.S.I</span>
                 </Link>
 
                 <!-- Close button for sidebar on mobile -->
@@ -35,17 +35,17 @@ const showingSidebar = ref(false);
 
             <ul class="space-y-2 font-medium">
                 <li :class="{'bg-blue-300 rounded-lg': route().current('doctor.dashboard')}">
-                    <Link :href="route('doctor.dashboard')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-blue-300 dark:hover:bg-red-700 group">
+                    <Link :href="route('doctor.dashboard')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-blue-300  group">
                         <span class="ms-3">    <i class="fas fa-gauge me-2"></i> Dashboard</span>
                     </Link>
                 </li>
                 <li :class="{'bg-blue-300 rounded-lg': route().current('doctor.appointment')}">
-                    <Link :href="route('doctor.appointment')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-blue-300 dark:hover:bg-red-700 group">
+                    <Link :href="route('doctor.appointment')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-blue-300  group">
                         <span class="ms-3">      <i class="fas fa-calendar-alt me-2"></i> appointment</span>
                     </Link>
                 </li>
                 <li :class="{'bg-blue-300 rounded-lg': route().current('doctor.schedule')}">
-                    <Link :href="route('doctor.schedule')" class="flex items-center p-2 text-red-900 rounded-lg dark:text-white hover:bg-blue-300 dark:hover:bg-red-700 group">
+                    <Link :href="route('doctor.schedule')" class="flex items-center p-2 text-red-900 rounded-lg  hover:bg-blue-300  group">
                         <span class="ms-3">   <i class="fas fa-clock me-2"></i> Schedule</span>
                     </Link>
                 </li>

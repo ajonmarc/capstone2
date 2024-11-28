@@ -97,12 +97,12 @@ function goToPage(url) {
     <DoctorLayout>
         <div class="py-5">
             <div
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-2"
+                class="w-full text-sm text-left text-gray-500  mb-2"
             >
                 APPOINTMENTS
             </div>
             <div
-                class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg"
+                class="bg-white  relative shadow-md sm:rounded-lg"
             >
                 <div
                     class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
@@ -121,7 +121,7 @@ function goToPage(url) {
                                 >
                                     <svg
                                         aria-hidden="true"
-                                        class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                        class="w-5 h-5 text-gray-500 "
                                         fill="currentColor"
                                         viewbox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ function goToPage(url) {
                                 <input
                                     type="text"
                                     id="simple-search"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                     placeholder="Search"
                                     required=""
                                     v-model="searchQuery"
@@ -149,10 +149,10 @@ function goToPage(url) {
 
                 <div class="overflow-x-auto">
                     <table
-                        class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                        class="w-full text-sm text-left text-gray-500 "
                     >
                         <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                            class="text-xs text-gray-700 uppercase bg-gray-50  "
                         >
                             <tr>
                                 <th scope="col" class="px-4 py-3">
@@ -178,7 +178,7 @@ function goToPage(url) {
                             <tr
                                 v-for="booking in bookings.data"
                                 :key="booking.id"
-                                class="border-b dark:border-gray-700"
+                                class="border-b "
                             >
                                 <td class="px-4 py-3">
                                     {{ booking.patient_name }}
@@ -253,7 +253,7 @@ function goToPage(url) {
             <!-- Dropdown for admin_status -->
             <select
                 v-model="modalStatus"
-                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2  "
             >
                 <option value="approved">Approve</option>
                 <option value="pending">Pending</option>
@@ -264,7 +264,7 @@ function goToPage(url) {
             <textarea
                 v-model="modalReply"
                 rows="3"
-                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2  "
                 placeholder="Reply with reason"
             ></textarea>
 
@@ -297,16 +297,16 @@ function goToPage(url) {
                             aria-label="Table navigation"
                         >
                             <span
-                                class="text-sm font-normal text-gray-500 dark:text-gray-400"
+                                class="text-sm font-normal text-gray-500 "
                             >
                                 Showing
                                 <span
-                                    class="font-semibold text-gray-900 dark:text-white"
+                                    class="font-semibold text-gray-900 "
                                     >{{ bookings.from }}-{{ bookings.to }}</span
                                 >
                                 of
                                 <span
-                                    class="font-semibold text-gray-900 dark:text-white"
+                                    class="font-semibold text-gray-900 "
                                     >{{ bookings.total }}</span
                                 >
                             </span>
@@ -321,7 +321,7 @@ function goToPage(url) {
                                             'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                             link.active
                                                 ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                                : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700',
                                         ]"
                                         v-html="link.label"
                                         @click.prevent="goToPage(link.url)"

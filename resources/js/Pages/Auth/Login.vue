@@ -36,11 +36,11 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
+        <div v-if="status" class="mb-4 font-medium text-sm text-green-600 ">
             {{ status }}
         </div>
 
-        <h1 class="text-4xl font-bold text-yellow-500 text-center mb-6 dark:text-yellow-400">
+        <h1 class="text-4xl font-bold text-yellow-500 text-center mb-6 ">
             Log in
         </h1>
 
@@ -48,12 +48,12 @@ const submit = () => {
         <form @submit.prevent="submit">
             <!-- Email -->
             <div>
-                <InputLabel for="email" value="Email" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="email" value="Email" class="text-gray-700 " />
 
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.email"
                     required
                     autofocus
@@ -66,12 +66,12 @@ const submit = () => {
 
             <!-- Password -->
             <div class="mt-4">
-                <InputLabel for="password" value="Password" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="password" value="Password" class="text-gray-700 " />
 
                 <TextInput
                     id="password"
                     type="password"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.password"
                     required
                     autocomplete="current-password"
@@ -85,7 +85,7 @@ const submit = () => {
             <div class="block mt-4">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                    <span class="ms-2 text-sm text-gray-600 ">Remember me</span>
                 </label>
             </div>
 
@@ -94,7 +94,7 @@ const submit = () => {
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    class="underline text-sm text-gray-600  hover:text-gray-900  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 >
                     Forgot your password?
                 </Link>

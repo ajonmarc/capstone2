@@ -39,17 +39,17 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <!-- Name -->
-            <h1 class="text-4xl font-bold text-yellow-500 text-center mb-6 dark:text-yellow-400">
+            <h1 class="text-4xl font-bold text-yellow-500 text-center mb-6 ">
             Register 
         </h1>
 
             <div>
-                <InputLabel for="name" value="Name" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="name" value="Name" class="text-gray-700 " />
 
                 <TextInput
                     id="name"
                     type="text"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.name"
                     required
                     autofocus
@@ -62,12 +62,12 @@ const submit = () => {
 
             <!-- Phone -->
             <div class="mt-4">
-                <InputLabel for="phone" value="Phone" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="phone" value="Phone" class="text-gray-700 " />
 
                 <TextInput
                     id="phone"
                     type="text"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.phone"
                     required
                     autocomplete="phone"
@@ -79,12 +79,12 @@ const submit = () => {
 
             <!-- Address -->
             <div class="mt-4">
-                <InputLabel for="address" value="Address" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="address" value="Address" class="text-gray-700 " />
 
                 <TextInput
                     id="address"
                     type="text"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.address"
                     required
                     autocomplete="address"
@@ -96,12 +96,12 @@ const submit = () => {
 
             <!-- Email -->
             <div class="mt-4">
-                <InputLabel for="email" value="Email" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="email" value="Email" class="text-gray-700 " />
 
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.email"
                     required
                     autocomplete="username"
@@ -113,13 +113,13 @@ const submit = () => {
 
             <!-- Password -->
             <div class="mt-4">
-                <InputLabel for="password" value="Password" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="password" value="Password" class="text-gray-700 " />
 
                 <TextInput
                     
                     id="password"
                     type="password"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100 text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.password"
                     required
                     autocomplete="new-password"
@@ -131,12 +131,12 @@ const submit = () => {
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" class="text-gray-700 dark:text-gray-300" />
+                <InputLabel for="password_confirmation" value="Confirm Password" class="text-gray-700 " />
 
                 <TextInput
                     id="password_confirmation"
                     type="password"
-                    class="mt-1 block w-full bg-white-100 dark:bg-white-900 text-white-700 dark:text-white-300 border border-white-300 dark:border-white-600 focus:border-red-500 focus:ring-red-500"
+                    class="mt-1 block w-full bg-white-100  text-white-700  border border-white-300  focus:border-red-500 focus:ring-red-500"
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
@@ -149,7 +149,7 @@ const submit = () => {
             <div class="flex items-center justify-end mt-4">
                 <Link
                     :href="route('login')"
-                    class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    class="underline text-sm text-gray-600  hover:text-gray-900  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 >
                     Already registered?
                 </Link>

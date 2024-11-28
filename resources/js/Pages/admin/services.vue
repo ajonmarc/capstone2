@@ -165,7 +165,7 @@ const deleteService = (service) => {
                 <input
                     id="stitle"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="stitle"
                     v-model="form.stitle"
                     autofocus
@@ -175,7 +175,7 @@ const deleteService = (service) => {
                 <InputError class="mt-1" :message="form.errors.stitle" />
                 <label
                     for="stitle"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >stitle</label
                 >
             </div>
@@ -185,7 +185,7 @@ const deleteService = (service) => {
                     id="image"
                     type="file"
                     @input="form.image = $event.target.files[0]"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="image"
                     autofocus
                     autocomplete="image"
@@ -194,7 +194,7 @@ const deleteService = (service) => {
                 <InputError class="mt-1" :message="form.errors.image" />
                 <label
                     for="image"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >image</label
                 >
             </div>
@@ -203,7 +203,7 @@ const deleteService = (service) => {
                 <textarea
                     id="description"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="description"
                     v-model="form.description"
                     autofocus
@@ -213,14 +213,14 @@ const deleteService = (service) => {
                 <InputError class="mt-1" :message="form.errors.description" />
                 <label
                     for="description"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >description</label
                 >
             </div>
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
             >
                 Submit
             </button>
@@ -232,12 +232,12 @@ const deleteService = (service) => {
         <div class="py-5">
     
                 <div
-                    class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-2"
+                    class="w-full text-sm text-left text-gray-500 text-gray-400 mb-2"
                 >
                     SERVICES
                 </div>
                 <div
-                    class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg"
+                    class="bg-white bg-gray-800 relative shadow-md sm:rounded-lg"
                 >
                     <div
                         class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
@@ -256,7 +256,7 @@ const deleteService = (service) => {
                                     >
                                         <svg
                                             aria-hidden="true"
-                                            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            class="w-5 h-5 text-gray-500 text-gray-400"
                                             fill="currentColor"
                                             viewbox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -272,7 +272,7 @@ const deleteService = (service) => {
                                         type="text"
                                         v-model="searchQuery"
                                         id="simple-search"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
                                         placeholder="Search"
                                         required=""
                                         @input="handleInputChange"
@@ -288,7 +288,7 @@ const deleteService = (service) => {
                             <button
                                 type="button"
                                 @click="openAddS"
-                                class="ml-2 mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                class="ml-2 mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-blue-800"
                             >
                                 Add Services
                             </button>
@@ -297,10 +297,10 @@ const deleteService = (service) => {
 
                     <div class="overflow-x-auto">
                         <table
-                            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                            class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                                class="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">image</th>
@@ -329,7 +329,7 @@ const deleteService = (service) => {
                                 <tr
                                     v-for="service in services.data"
                                     :key="service.id"
-                                    class="border-b dark:border-gray-700"
+                                    class="border-b border-gray-700"
                                 >
                                     <td class="px-4 py-3">
                                         <img
@@ -377,18 +377,18 @@ const deleteService = (service) => {
                                 aria-label="Table navigation"
                             >
                                 <span
-                                    class="text-sm font-normal text-gray-500 dark:text-gray-400"
+                                    class="text-sm font-normal text-gray-500 text-gray-400"
                                 >
                                     Showing
                                     <span
-                                        class="font-semibold text-gray-900 dark:text-white"
+                                        class="font-semibold text-gray-900 text-white"
                                         >{{ services.from }}-{{
                                             services.to
                                         }}</span
                                     >
                                     of
                                     <span
-                                        class="font-semibold text-gray-900 dark:text-white"
+                                        class="font-semibold text-gray-900 text-white"
                                         >{{ services.total }}</span
                                     >
                                 </span>
@@ -405,7 +405,7 @@ const deleteService = (service) => {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"

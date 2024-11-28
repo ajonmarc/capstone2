@@ -120,7 +120,7 @@ const deleteAppointment = (booking) => {
                 >
                     <button
                         @click="toggleMenu"
-                          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -262,16 +262,16 @@ const deleteAppointment = (booking) => {
     </header>
 
     <PatientLayout>
-        <section class="bg-gray-100 dark:bg-gray-100 py-28">
+        <section class="bg-gray-100  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                    class="text-3xl font-bold text-gray-900  mb-8 text-center"
                 >
                     My appointment
                 </h2>
 
                 <div
-                    class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg"
+                    class="bg-white  relative shadow-md sm:rounded-lg"
                 >
                     <div
                         class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
@@ -290,7 +290,7 @@ const deleteAppointment = (booking) => {
                                     >
                                         <svg
                                             aria-hidden="true"
-                                            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            class="w-5 h-5 text-gray-500 "
                                             fill="currentColor"
                                             viewbox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -305,7 +305,7 @@ const deleteAppointment = (booking) => {
                                     <input
                                         type="text"
                                         id="simple-search"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                         placeholder="Search"
                                         required=""
                                         v-model="searchQuery"
@@ -318,10 +318,10 @@ const deleteAppointment = (booking) => {
                     <!-- appointment Table -->
                     <div class="overflow-x-auto">
                         <table
-                            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                            class="w-full text-sm text-left text-gray-500 "
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                                class="text-xs text-gray-700 uppercase bg-gray-50 "
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">
@@ -355,7 +355,7 @@ const deleteAppointment = (booking) => {
                                 <tr
                                     v-for="booking in bookings.data"
                                     :key="booking.id"
-                                    class="border-b dark:border-gray-700"
+                                    class="border-b "
                                 >
                                     <td class="px-4 py-3">
                                         {{ booking.doc_name }}
@@ -434,18 +434,18 @@ const deleteAppointment = (booking) => {
                                 aria-label="Table navigation"
                             >
                                 <span
-                                    class="text-sm font-normal text-gray-500 dark:text-gray-400"
+                                    class="text-sm font-normal text-gray-500 "
                                 >
                                     Showing
                                     <span
-                                        class="font-semibold text-gray-900 dark:text-white"
+                                        class="font-semibold text-gray-900 "
                                         >{{ bookings.from }}-{{
                                             bookings.to
                                         }}</span
                                     >
                                     of
                                     <span
-                                        class="font-semibold text-gray-900 dark:text-white"
+                                        class="font-semibold text-gray-900 "
                                         >{{ bookings.total }}</span
                                     >
                                 </span>
@@ -462,7 +462,7 @@ const deleteAppointment = (booking) => {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"

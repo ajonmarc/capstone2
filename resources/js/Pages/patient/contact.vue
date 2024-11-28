@@ -86,7 +86,7 @@ feedback.post("/submit-feedback", {
                 >
                     <button
                         @click="toggleMenu"
-                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200 dark:text-red-400 dark:focus:ring-red-600"
+                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-red-500 rounded-lg md:hidden hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-200"
                         aria-controls="navbar-cta"
                         aria-expanded="false"
                     >
@@ -229,13 +229,13 @@ feedback.post("/submit-feedback", {
     
     <PatientLayout>
          <!-- Support Section (Feedback Form) -->
-            <section id="contact" class="bg-gray-50 dark:bg-gray-700 py-28">
+            <section id="contact" class="bg-gray-50  py-28">
                 <div class="max-w-screen-lg mx-auto px-4">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <!-- Left: Introductory Text -->
                         <div class="flex flex-col justify-center">
                             <h2
-                                class="text-3xl font-bold text-gray-900 dark:text-white mb-8"
+                                class="text-3xl font-bold text-gray-900  mb-8"
                             >
                                 We Value Your Feedback
                             </h2>
@@ -247,7 +247,7 @@ feedback.post("/submit-feedback", {
                                 class="w-32 h-32 rounded-full mb-8 object-cover"
                             />
                             <p
-                                class="text-lg text-gray-600 dark:text-gray-400 mb-8"
+                                class="text-lg text-gray-600  mb-8"
                             >
                                 Please let us know how we can improve our
                                 services and your experience with us. Your
@@ -260,19 +260,19 @@ feedback.post("/submit-feedback", {
                         <div>
                             <form
                     @submit.prevent="submitFeedback"
-                    class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg"
+                    class="bg-white  p-8 rounded-lg shadow-lg"
                 >
                     <div class="mb-6">
                         <label
                             for="message"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            class="block mb-2 text-sm font-medium text-gray-900 "
                             >Message</label
                         >
                         <textarea
                             v-model="feedback.message"
                             id="message"
                             rows="5"
-                            class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white"
+                            class="block w-full p-3 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm rounded-lg bg-gray-100"
                             required
                         ></textarea>
                         
@@ -281,7 +281,7 @@ feedback.post("/submit-feedback", {
                     <!-- Submit Button -->
                     <button
                         type="submit"
-                        class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                        class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300"
                     >
                         Submit Feedback
                     </button>
