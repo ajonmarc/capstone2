@@ -235,7 +235,7 @@ const closeModal = () => {
                 <input
                     id="title"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="title"
                     v-model="form.title"
                     autofocus
@@ -255,7 +255,7 @@ const closeModal = () => {
                     id="logo"
                     type="file"
                     @input="form.logo = $event.target.files[0]"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="logo"
                     autofocus
                     autocomplete="logo"
@@ -271,8 +271,9 @@ const closeModal = () => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-            >
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing" >
                 Submit
             </button>
         </form>
@@ -280,81 +281,7 @@ const closeModal = () => {
     </el-dialog>
 
     
-    <el-dialog
-        v-model="dialogVisibleF"
-        :title="isAddF ? 'Add footer' : 'Edit footer'"
-        width="500"
-        :before-close="handleClose"
-    >
-        <!--form start-->
 
-        <form @submit.prevent="submitF" class="max-w-md mx-auto">
-            <div class="relative z-0 w-full mb-5 group">
-                <input
-                    id="fbname"
-                    type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    name="fbname"
-                    v-model="form.fbname"
-                    autofocus
-                    autocomplete="fbname"
-                    placeholder=" "
-                />
-                <InputError class="mt-1" :message="form.errors.fbname" />
-                <label
-                    for="fbname"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >fbname</label
-                >
-            </div>
-
-            <div class="relative z-0 w-full mb-5 group">
-                <input
-                    id="contact"
-                    type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    name="contact"
-                    v-model="form.contact"
-                    autofocus
-                    autocomplete="contact"
-                    placeholder=" "
-                />
-                <InputError class="mt-1" :message="form.errors.contact" />
-                <label
-                    for="contact"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >contact</label
-                >
-            </div>
-
-            <div class="relative z-0 w-full mb-5 group">
-                <input
-                    id="place"
-                    type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    name="place"
-                    v-model="form.place"
-                    autofocus
-                    autocomplete="place"
-                    placeholder=" "
-                />
-                <InputError class="mt-1" :message="form.errors.place" />
-                <label
-                    for="place"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >place</label
-                >
-            </div>
-
-            <button
-                type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-            >
-                Submit
-            </button>
-        </form>
-        <!--form end-->
-    </el-dialog>
 
     <AdminLayout>
         <div class="py-5">
@@ -381,7 +308,7 @@ const closeModal = () => {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase  bg-gray-50"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">Title</th>
@@ -396,7 +323,7 @@ const closeModal = () => {
                                 <tr
                                     v-for="header in headers"
                                     :key="header.id"
-                                    class="border-b border-gray-700"
+                                    class="border-b"
                                 >
                                     <td class="px-4 py-3">
                                         {{ header.title }}
@@ -454,7 +381,7 @@ const closeModal = () => {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase  bg-gray-50"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">
@@ -476,7 +403,7 @@ const closeModal = () => {
                                 <tr
                                     v-for="footer in footers"
                                     :key="footer.id"
-                                    class="border-b border-gray-700"
+                                    class="border-b"
                                 >
                                     <td class="px-4 py-3">
                                         {{ footer.fbname }}

@@ -71,7 +71,6 @@ const deleteUser = (user) => {
                 "Deleted!",
                 `User ${user.name} has been deleted.`,
                 "success"
-                
             );
         },
     });
@@ -249,7 +248,7 @@ const closeViewModal = () => {
                 <input
                     id="name"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="name"
                     v-model="form.name"
                     autofocus
@@ -259,7 +258,7 @@ const closeViewModal = () => {
                 <InputError class="mt-1" :message="form.errors.name" />
                 <label
                     for="name"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >Full name</label
                 >
             </div>
@@ -269,7 +268,7 @@ const closeViewModal = () => {
                     type="email"
                     name="email"
                     id="email"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                     v-model="form.email"
                     autofocus
@@ -278,7 +277,7 @@ const closeViewModal = () => {
                 <InputError class="mt-1" :message="form.errors.email" />
                 <label
                     for="email"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >Email address</label
                 >
             </div>
@@ -286,7 +285,7 @@ const closeViewModal = () => {
             <div class="relative z-0 w-full mb-5 group">
                 <label
                     for="role"
-                    class="block mb-2 text-sm font-medium text-gray-500 "
+                    class="block mb-2 text-sm font-medium text-gray-500"
                     >Select role</label
                 >
 
@@ -309,13 +308,13 @@ const closeViewModal = () => {
                     name="floating_password"
                     id="password"
                     v-model="form.password"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.password" />
                 <label
                     for="floating_password"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >Password</label
                 >
             </div>
@@ -326,13 +325,13 @@ const closeViewModal = () => {
                     name="phone"
                     id="phone"
                     v-model="form.phone"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.phone" />
                 <label
                     for="phone"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >Contact no.</label
                 >
             </div>
@@ -343,20 +342,22 @@ const closeViewModal = () => {
                     name="address"
                     id="address"
                     v-model="form.address"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.address" />
                 <label
                     for="address"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >Address</label
                 >
             </div>
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"
             >
                 Submit
             </button>
@@ -366,251 +367,244 @@ const closeViewModal = () => {
 
     <AdminLayout>
         <div class="py-5">
- 
+            <div class="w-full text-sm text-left text-gray-500 mb-2">USERS</div>
+            <div class="bg-white relative shadow-md sm:rounded-lg">
                 <div
-                    class="w-full text-sm text-left text-gray-500  mb-2"
+                    class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
                 >
-                    USERS
-                </div>
-                <div
-                    class="bg-white relative shadow-md sm:rounded-lg"
-                >
-                    <div
-                        class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
-                    >
-                        <div class="w-full md:w-1/2">
-                            <form
-                                @submit.prevent="search"
-                                class="flex items-center"
+                    <div class="w-full md:w-1/2">
+                        <form
+                            @submit.prevent="search"
+                            class="flex items-center"
+                        >
+                            <label for="simple-search" class="sr-only"
+                                >Search</label
                             >
-                                <label for="simple-search" class="sr-only"
-                                    >Search</label
+                            <div class="relative w-full">
+                                <div
+                                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
                                 >
-                                <div class="relative w-full">
-                                    <div
-                                        class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                                    <svg
+                                        aria-hidden="true"
+                                        class="w-5 h-5 text-gray-500"
+                                        fill="currentColor"
+                                        viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    v-model="searchQuery"
+                                    id="simple-search"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
+                                    placeholder="Search"
+                                    required=""
+                                    @input="handleInputChange"
+                                />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div
+                        class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0"
+                    >
+                        <!-- Add User Button -->
+                        <button
+                            type="button"
+                            @click="openAddModal"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        >
+                            Add User
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500">
+                        <thead
+                            class="text-xs text-gray-700 uppercase bg-gray-50"
+                        >
+                            <tr>
+                                <th scope="col" class="px-4 py-3">#</th>
+                                <th scope="col" class="px-4 py-3">Email</th>
+
+                                <th scope="col" class="px-4 py-3">Address</th>
+                                <th scope="col" class="px-4 py-3">
+                                    Registered Date
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="px-4 py-3 flex items-center justify-end"
+                                >
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- Check if users exist -->
+                            <tr v-if="users.data.length === 0">
+                                <td
+                                    colspan="5"
+                                    class="text-center text-gray-500"
+                                >
+                                    Nothing found
+                                </td>
+                            </tr>
+                            <tr
+                                v-for="user in users.data"
+                                :key="user.id"
+                                class="border-b"
+                            >
+                                <th
+                                    scope="row"
+                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
+                                >
+                                    {{ user.id }}
+                                </th>
+                                <td class="px-4 py-3">{{ user.email }}</td>
+
+                                <td class="px-4 py-3">
+                                    {{ user.address }}
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span>{{
+                                        new Date(
+                                            user.created_at
+                                        ).toLocaleDateString()
+                                    }}</span>
+                                    <span class="text-sm text-gray-600"
+                                        >({{
+                                            new Date(
+                                                user.created_at
+                                            ).toLocaleDateString("en-US", {
+                                                weekday: "long",
+                                            })
+                                        }})</span
+                                    >
+                                    <!-- Day Type -->
+                                </td>
+
+                                <td
+                                    class="px-4 py-3 flex items-center justify-end"
+                                >
+                                    <!-- Dropdown Button -->
+                                    <button
+                                        @click="toggleDropdown(user.id)"
+                                        :id="'dropdown-button-' + user.id"
+                                        class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:hover:text-gray-100"
+                                        type="button"
                                     >
                                         <svg
+                                            class="w-5 h-5"
                                             aria-hidden="true"
-                                            class="w-5 h-5 text-gray-500 "
                                             fill="currentColor"
                                             viewbox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
-                                                fill-rule="evenodd"
-                                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                                clip-rule="evenodd"
+                                                d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
                                             />
                                         </svg>
+                                    </button>
+
+                                    <!-- Dropdown Menu -->
+                                    <div
+                                        v-show="dropdownVisible[user.id]"
+                                        :id="'dropdown-' + user.id"
+                                        class="absolute right-0 mt-36 z-10 w-12 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:divide-gray-600 border border-gray-200"
+                                    >
+                                        <ul
+                                            class="py-1 text-sm text-gray-700"
+                                            :aria-labelledby="
+                                                'dropdown-button-' + user.id
+                                            "
+                                        >
+                                            <li>
+                                                <a
+                                                    @click.prevent="
+                                                        openViewModal(user)
+                                                    "
+                                                    href="#"
+                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                >
+                                                    <i
+                                                        class="fas fa-eye text-blue-500"
+                                                    ></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    type="button"
+                                                    @click="openEditModal(user)"
+                                                >
+                                                    <i
+                                                        class="fas fa-edit text-green-500"
+                                                    ></i>
+                                                </button>
+                                            </li>
+
+                                            <li>
+                                                <button
+                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    type="button"
+                                                    @click="confirmDelete(user)"
+                                                >
+                                                    <i
+                                                        class="fas fa-trash text-red-500"
+                                                    ></i>
+                                                </button>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <input
-                                        type="text"
-                                        v-model="searchQuery"
-                                        id="simple-search"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
-                                        placeholder="Search"
-                                        required=""
-                                        @input="handleInputChange"
-                                    />
-                                </div>
-                            </form>
-                        </div>
-
-                        <div
-                            class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Pagination Links -->
+                    <div v-if="users.links.length > 1">
+                        <nav
+                            class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
+                            aria-label="Table navigation"
                         >
-                            <!-- Add User Button -->
-                            <button
-                                type="button"
-                                @click="openAddModal"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                            >
-                                Add User
-                            </button>
-                        </div>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table
-                            class="w-full text-sm text-left text-gray-500 "
-                        >
-                            <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50"
-                            >
-                                <tr>
-                                    <th scope="col" class="px-4 py-3">#</th>
-                                    <th scope="col" class="px-4 py-3">Email</th>
-
-                                    <th scope="col" class="px-4 py-3">
-                                        Address
-                                    </th>
-                                    <th scope="col" class="px-4 py-3">
-                                        Registered Date
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        class="px-4 py-3 flex items-center justify-end"
-                                    >
-                                        Actions
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <!-- Check if users exist -->
-                                <tr v-if="users.data.length === 0">
-                                    <td
-                                        colspan="5"
-                                        class="text-center text-gray-500"
-                                    >
-                                        Nothing found
-                                    </td>
-                                </tr>
-                                <tr
-                                    v-for="user in users.data"
-                                    :key="user.id"
-                                    class="border-b dark:border-gray-700"
+                            <span class="text-sm font-normal text-gray-500">
+                                Showing
+                                <span class="font-semibold text-gray-900"
+                                    >{{ users.from }}-{{ users.to }}</span
                                 >
-                                    <th
-                                        scope="row"
-                                        class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
-                                    >
-                                        {{ user.id }}
-                                    </th>
-                                    <td class="px-4 py-3">{{ user.email }}</td>
-
-                                    <td class="px-4 py-3">
-                                        {{ user.address }}
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        {{ user.created_at }}
-                                    </td>
-                                    <td
-                                        class="px-4 py-3 flex items-center justify-end"
-                                    >
-                                        <!-- Dropdown Button -->
-                                        <button
-                                            @click="toggleDropdown(user.id)"
-                                            :id="'dropdown-button-' + user.id"
-                                            class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:hover:text-gray-100"
-                                            type="button"
-                                        >
-                                            <svg
-                                                class="w-5 h-5"
-                                                aria-hidden="true"
-                                                fill="currentColor"
-                                                viewbox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
-                                                />
-                                            </svg>
-                                        </button>
-
-                                        <!-- Dropdown Menu -->
-                                        <div
-                                            v-show="dropdownVisible[user.id]"
-                                            :id="'dropdown-' + user.id"
-                                            class="absolute right-0 mt-36 z-10 w-12 bg-white rounded-lg shadow-lg divide-y divide-gray-100  dark:divide-gray-600 border border-gray-200"
-                                        >
-                                            <ul
-                                                class="py-1 text-sm text-gray-700"
-                                                :aria-labelledby="
-                                                    'dropdown-button-' + user.id
-                                                "
-                                            >
-                                                <li>
-                                                    <a
-                                                        @click.prevent="
-                                                            openViewModal(user)
-                                                        "
-                                                        href="#"
-                                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                    >
-                                                        <i
-                                                            class="fas fa-eye text-blue-500"
-                                                        ></i
-                                                    ></a>
-                                                </li>
-                                                <li>
-                                                    <button
-                                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                        type="button"
-                                                        @click="
-                                                            openEditModal(user)
-                                                        "
-                                                    >
-                                                        <i
-                                                            class="fas fa-edit text-green-500"
-                                                        ></i>
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button
-                                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                        type="button"
-                                                        @click="
-                                                            confirmDelete(user)
-                                                        "
-                                                    >
-                                                        <i
-                                                            class="fas fa-trash text-red-500"
-                                                        ></i>
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- Pagination Links -->
-                        <div v-if="users.links.length > 1">
-                            <nav
-                                class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
-                                aria-label="Table navigation"
-                            >
-                                <span
-                                    class="text-sm font-normal text-gray-500 "
+                                of
+                                <span class="font-semibold text-gray-900">{{
+                                    users.total
+                                }}</span>
+                            </span>
+                            <ul class="inline-flex items-stretch -space-x-px">
+                                <li
+                                    v-for="(link, index) in users.links"
+                                    :key="index"
                                 >
-                                    Showing
-                                    <span
-                                        class="font-semibold text-gray-900 "
-                                        >{{ users.from }}-{{ users.to }}</span
-                                    >
-                                    of
-                                    <span
-                                        class="font-semibold text-gray-900 "
-                                        >{{ users.total }}</span
-                                    >
-                                </span>
-                                <ul
-                                    class="inline-flex items-stretch -space-x-px"
-                                >
-                                    <li
-                                        v-for="(link, index) in users.links"
-                                        :key="index"
-                                    >
-                                        <a
-                                            href="#"
-                                            :class="[
-                                                'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
-                                                link.active
-                                                    ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700  dark:border-gray-700  dark:hover:bg-gray-700 dark:hover:text-white',
-                                            ]"
-                                            v-html="link.label"
-                                            @click.prevent="goToPage(link.url)"
-                                        ></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                                    <a
+                                        href="#"
+                                        :class="[
+                                            'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
+                                            link.active
+                                                ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
+                                                : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700',
+                                        ]"
+                                        v-html="link.label"
+                                        @click.prevent="goToPage(link.url)"
+                                    ></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-     
+            </div>
         </div>
     </AdminLayout>
 </template>

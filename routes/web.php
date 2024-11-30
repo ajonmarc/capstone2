@@ -97,7 +97,7 @@ Route::get('/patient/pending-bookings-count', [PatientController::class, 'pendin
 
 });
 
-Route::get('/patient/chatbot-2349snskdgd/g/dgdssd/s/sd5dggdgd@sd', [ChatbotController::class, 'patientChatbot'])->name('patient.chatbot');
+
 
 
 

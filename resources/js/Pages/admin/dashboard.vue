@@ -71,7 +71,7 @@ testimonialCount: {
         
         <div class="py-5">
             <div
-                class="w-full text-sm text-left text-gray-500 text-gray-400 mb-2"
+                class="w-full text-sm text-left text-gray-500  mb-2"
             >
                 DASHBOARD
             </div>

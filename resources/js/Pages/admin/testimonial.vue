@@ -221,7 +221,7 @@ function goToPage(url) {
                                     <input
                                         type="text"
                                         id="simple-search"
-                                        class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 -700 border-gray-600 placeholder-gray-400  focus:ring-primary-500 focus:border-primary-500"
+                                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                         placeholder="Search"
                                         required=""
                                                 v-model="searchQuery"
@@ -239,7 +239,7 @@ function goToPage(url) {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase  bg-gray-50"
                             >
                                 <tr>
                               
@@ -268,7 +268,7 @@ function goToPage(url) {
                                 <tr
                                   v-for="testimony in testimonials.data"
                                     :key="testimony.id"
-                                    class="border-b border-gray-700"
+                                    class="border-b"
                                 >
                                     <td class="px-4 py-3">
                                         {{  testimony.patient_name  }}
@@ -339,7 +339,7 @@ function goToPage(url) {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400 hover:-700 hover:',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"

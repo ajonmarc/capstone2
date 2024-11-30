@@ -649,6 +649,7 @@ const submitFeedback = () => {
                             <button
                                 type="submit"
                                 class="w-full bg-red-700 text-white p-3 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300"
+                                
                             >
                                 Submit Feedback
                             </button>

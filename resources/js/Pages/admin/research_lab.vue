@@ -166,7 +166,7 @@ const deleteRes = (research_lab) => {
                     id="image"
                     type="file"
                     @input="form.image = $event.target.files[0]"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="image"
                     autofocus
                     autocomplete="image"
@@ -184,7 +184,7 @@ const deleteRes = (research_lab) => {
                 <input
                     id="name"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="name"
                     v-model="form.name"
                     autofocus
@@ -203,7 +203,7 @@ const deleteRes = (research_lab) => {
                 <textarea
                     id="description"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="description"
                     v-model="form.description"
                     autofocus
@@ -220,8 +220,9 @@ const deleteRes = (research_lab) => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-            >
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"  >
                 Submit
             </button>
         </form>
@@ -271,7 +272,7 @@ const deleteRes = (research_lab) => {
                                     <input
                                         type="text"
                                         id="simple-search"
-                                        class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 -700 border-gray-600 placeholder-gray-400  focus:ring-primary-500 focus:border-primary-500"
+                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                         placeholder="Search"
                                         required=""
                                         v-model="searchQuery"
@@ -300,7 +301,7 @@ const deleteRes = (research_lab) => {
                             class="w-full text-sm text-left text-gray-500 text-gray-400"
                         >
                             <thead
-                                class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
+                                class="text-xs text-gray-700 uppercase  bg-gray-50"
                             >
                                 <tr>
                                     <th scope="col" class="px-4 py-3">IMAGE</th>
@@ -327,7 +328,7 @@ const deleteRes = (research_lab) => {
                                 <tr
                                     v-for="research_lab in research_labs.data"
                                     :key="research_lab.id"
-                                    class="border-b border-gray-700"
+                                    class="border-b"
                                 >
                                     <td class="px-4 py-3">
                                         <img
@@ -407,7 +408,7 @@ const deleteRes = (research_lab) => {
                                                 'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                                 link.active
                                                     ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700 -800 border-gray-700 text-gray-400 hover:-700 hover:',
+                                                    : 'text-gray-500 bg-white border-gray-300 hover:-100 hover:text-gray-700',
                                             ]"
                                             v-html="link.label"
                                             @click.prevent="goToPage(link.url)"

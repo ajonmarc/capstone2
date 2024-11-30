@@ -227,12 +227,10 @@ const toggleMenu = () => {
     </header>
     
     <PatientLayout>
-        <!-- About Us Section -->
-        <section id="about" class="bg-gray-50 ">
+         <!-- About Us Section -->
+         <section id="about" class="bg-gray-50  py-28">
             <div class="max-w-screen-xl mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-gray-900 mb-8 text-center"
-                >
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
                     About Us
                 </h2>
                 <p
@@ -250,9 +248,7 @@ const toggleMenu = () => {
                         />
                     </div>
                     <div class="flex flex-col justify-center">
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Mission
                         </h3>
                         <p class="text-gray-600  mb-6">
@@ -260,9 +256,7 @@ const toggleMenu = () => {
                             to provide patient-centered, compassionate care,
                             promoting health and well-being in our community.
                         </p>
-                        <h3
-                            class="text-xl font-semibold text-gray-900  mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Vision
                         </h3>
                         <p class="text-gray-600  mb-6">
@@ -270,9 +264,7 @@ const toggleMenu = () => {
                             offering innovative and comprehensive medical
                             services through our dedicated team of specialists.
                         </p>
-                        <h3
-                            class="text-xl font-semibold text-gray-900 mb-4"
-                        >
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
                             Our Values
                         </h3>
                         <ul
@@ -309,7 +301,7 @@ const toggleMenu = () => {
                         >
                             Doctors
                         </h3>
-                        <p class="text-gray-600">
+                        <p class="text-gray-600 ">
                             {{ doctorCount }} specialists
                         </p>
                     </div>
@@ -328,8 +320,8 @@ const toggleMenu = () => {
                         >
                             Departments
                         </h3>
-                        <p class="text-gray-600">
-                            {{ departmentCount }}  specialized departments
+                        <p class="text-gray-600 ">
+                            {{ departmentCount }} specialized departments
                         </p>
                     </div>
                     <div
@@ -347,8 +339,8 @@ const toggleMenu = () => {
                         >
                             Research Labs
                         </h3>
-                        <p class="text-gray-600">
-                            {{ researchlabCount }}  advanced labs
+                        <p class="text-gray-600 ">
+                            {{ researchlabCount }} advanced labs
                         </p>
                     </div>
                     <div
@@ -365,7 +357,7 @@ const toggleMenu = () => {
                             Awards
                         </h3>
                         <p class="text-gray-600">
-                            {{ awardCount }}  excellence awards
+                            {{ awardCount }} excellence awards
                         </p>
                     </div>
                 </div>

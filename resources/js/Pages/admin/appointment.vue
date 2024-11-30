@@ -230,7 +230,7 @@ function goToPage(url) {
                                             'flex items-center justify-center text-sm py-2 px-3 leading-tight border',
                                             link.active
                                                 ? 'bg-primary-50 text-primary-600 border-primary-300 hover:bg-primary-100'
-                                                : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700  dark:border-gray-700  dark:hover:bg-gray-700 dark:hover:text-white',
+                                                : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700',
                                         ]"
                                         v-html="link.label"
                                         @click.prevent="goToPage(link.url)"

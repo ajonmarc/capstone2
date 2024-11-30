@@ -8,8 +8,8 @@ import { useForm } from "@inertiajs/vue3";
 import { Inertia } from "@inertiajs/inertia";
 
 const showModal = ref(false);
-const modalStatus = ref('');
-const modalReply = ref('');
+const modalStatus = ref("");
+const modalReply = ref("");
 const bookingToUpdate = ref(null); // To store the current booking being edited
 
 // Open the modal with current values
@@ -38,18 +38,30 @@ const saveChanges = (status, reply) => {
     }).then((result) => {
         if (result.isConfirmed) {
             // Make the POST request using Inertia or your preferred method
-            Inertia.post(route("doctor.updateAppointment", bookingToUpdate.value.id), {
-                admin_status: status,
-                reply: reply,
-            }, {
-                onSuccess: () => {
-                    Swal.fire("Updated!", "The booking has been updated.", "success");
-                    closeModal(); // Close the modal after success
+            Inertia.post(
+                route("doctor.updateAppointment", bookingToUpdate.value.id),
+                {
+                    admin_status: status,
+                    reply: reply,
                 },
-                onError: () => {
-                    Swal.fire("Error!", "Failed to update the booking.", "error");
-                },
-            });
+                {
+                    onSuccess: () => {
+                        Swal.fire(
+                            "Updated!",
+                            "The booking has been updated.",
+                            "success"
+                        );
+                        closeModal(); // Close the modal after success
+                    },
+                    onError: () => {
+                        Swal.fire(
+                            "Error!",
+                            "Failed to update the booking.",
+                            "error"
+                        );
+                    },
+                }
+            );
         }
     });
 };
@@ -96,14 +108,10 @@ function goToPage(url) {
 
     <DoctorLayout>
         <div class="py-5">
-            <div
-                class="w-full text-sm text-left text-gray-500  mb-2"
-            >
+            <div class="w-full text-sm text-left text-gray-500 mb-2">
                 APPOINTMENTS
             </div>
-            <div
-                class="bg-white  relative shadow-md sm:rounded-lg"
-            >
+            <div class="bg-white relative shadow-md sm:rounded-lg">
                 <div
                     class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
                 >
@@ -121,7 +129,7 @@ function goToPage(url) {
                                 >
                                     <svg
                                         aria-hidden="true"
-                                        class="w-5 h-5 text-gray-500 "
+                                        class="w-5 h-5 text-gray-500"
                                         fill="currentColor"
                                         viewbox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -148,11 +156,9 @@ function goToPage(url) {
                 </div>
 
                 <div class="overflow-x-auto">
-                    <table
-                        class="w-full text-sm text-left text-gray-500 "
-                    >
+                    <table class="w-full text-sm text-left text-gray-500">
                         <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50  "
+                            class="text-xs text-gray-700 uppercase bg-gray-50"
                         >
                             <tr>
                                 <th scope="col" class="px-4 py-3">
@@ -178,7 +184,7 @@ function goToPage(url) {
                             <tr
                                 v-for="booking in bookings.data"
                                 :key="booking.id"
-                                class="border-b "
+                                class="border-b"
                             >
                                 <td class="px-4 py-3">
                                     {{ booking.patient_name }}
@@ -233,60 +239,85 @@ function goToPage(url) {
                                     </span>
                                 </td>
 
-                              <!-- TD with Save Button -->
-<td class="px-4 py-3">
-    <button
-        @click="openModal(booking)"
-        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-    >
-        Send Mail
-    </button>
-</td>
+                                <!-- TD with Save Button -->
+                                <td class="px-4 py-3">
+                                    <button
+                                        @click="openModal(booking)"
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                                    >
+                                        Send Mail
+                                    </button>
+                                </td>
 
-<!-- Modal Popup -->
-<template v-if="showModal">
-    <div class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 class="text-xl font-semibold mb-4">Confirm Changes</h2>
-            <p>Are you sure you want to update the status to '{{ modalStatus }}'?</p>
+                                <!-- Modal Popup -->
+                                <template v-if="showModal">
+                                    <div
+                                        class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50"
+                                    >
+                                        <div
+                                            class="bg-white p-6 rounded-lg shadow-lg w-96"
+                                        >
+                                            <h2
+                                                class="text-xl font-semibold mb-4"
+                                            >
+                                                Confirm Changes
+                                            </h2>
+                                            <p>
+                                                Are you sure you want to update
+                                                the status to '{{
+                                                    modalStatus
+                                                }}'?
+                                            </p>
 
-            <!-- Dropdown for admin_status -->
-            <select
-                v-model="modalStatus"
-                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2  "
-            >
-                <option value="approved">Approve</option>
-                <option value="pending">Pending</option>
-                <option value="canceled">Cancel</option>
-            </select>
+                                            <!-- Dropdown for admin_status -->
+                                            <select
+                                                v-model="modalStatus"
+                                                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
+                                            >
+                                                <option value="approved">
+                                                    Approve
+                                                </option>
+                                                <option value="pending">
+                                                    Pending
+                                                </option>
+                                                <option value="canceled">
+                                                    Cancel
+                                                </option>
+                                            </select>
 
-            <!-- Reply Text Area -->
-            <textarea
-                v-model="modalReply"
-                rows="3"
-                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2  "
-                placeholder="Reply with reason"
-            ></textarea>
+                                            <!-- Reply Text Area -->
+                                            <textarea
+                                                v-model="modalReply"
+                                                rows="3"
+                                                class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
+                                                placeholder="Reply with reason"
+                                            ></textarea>
 
-            <!-- Buttons -->
-            <div class="flex justify-end space-x-2 mt-4">
-                <button
-                    @click="closeModal"
-                    class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
-                >
-                    Cancel
-                </button>
-                <button
-                    @click="saveChanges(modalStatus, modalReply)"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                >
-                    Yes, update it!
-                </button>
-            </div>
-        </div>
-    </div>
-</template>
-
+                                            <!-- Buttons -->
+                                            <div
+                                                class="flex justify-end space-x-2 mt-4"
+                                            >
+                                                <button
+                                                    @click="closeModal"
+                                                    class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+                                                >
+                                                    Cancel
+                                                </button>
+                                                <button
+                                                    @click="
+                                                        saveChanges(
+                                                            modalStatus,
+                                                            modalReply
+                                                        )
+                                                    "
+                                                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                                                >
+                                                    Yes, update it!
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
                             </tr>
                         </tbody>
                     </table>
@@ -296,19 +327,15 @@ function goToPage(url) {
                             class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
                             aria-label="Table navigation"
                         >
-                            <span
-                                class="text-sm font-normal text-gray-500 "
-                            >
+                            <span class="text-sm font-normal text-gray-500">
                                 Showing
-                                <span
-                                    class="font-semibold text-gray-900 "
+                                <span class="font-semibold text-gray-900"
                                     >{{ bookings.from }}-{{ bookings.to }}</span
                                 >
                                 of
-                                <span
-                                    class="font-semibold text-gray-900 "
-                                    >{{ bookings.total }}</span
-                                >
+                                <span class="font-semibold text-gray-900">{{
+                                    bookings.total
+                                }}</span>
                             </span>
                             <ul class="inline-flex items-stretch -space-x-px">
                                 <li

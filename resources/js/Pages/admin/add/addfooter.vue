@@ -97,7 +97,7 @@ const closeModal = () => {
                 <input
                     id="fbname"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="fbname"
                     v-model="form.fbname"
                     autofocus
@@ -116,7 +116,7 @@ const closeModal = () => {
                 <input
                     id="contact"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="contact"
                     v-model="form.contact"
                     autofocus
@@ -135,7 +135,7 @@ const closeModal = () => {
                 <input
                     id="place"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="place"
                     v-model="form.place"
                     autofocus
@@ -152,8 +152,9 @@ const closeModal = () => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-            >
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing" >
                 Submit
             </button>
         </form>

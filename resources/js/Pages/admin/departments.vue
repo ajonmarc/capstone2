@@ -163,7 +163,7 @@ const deleteDepartment = (department) => {
                 <input
                     id="titledep"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="titledep"
                     v-model="form.titledep"
                     autofocus
@@ -183,7 +183,7 @@ const deleteDepartment = (department) => {
                     id="imagedep"
                     type="file"
                     @input="form.imagedep = $event.target.files[0]"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="imagedep"
                     autofocus
                     autocomplete="imagedep"
@@ -199,8 +199,9 @@ const deleteDepartment = (department) => {
 
             <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-            >
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"  >
                 Submit
             </button>
         </form>
@@ -247,7 +248,7 @@ const deleteDepartment = (department) => {
                                 <input
                                     type="text"
                                     id="simple-search"
-                                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 -700 border-gray-600 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                     placeholder="Search"
                                     required=""
                                     v-model="searchQuery"
@@ -276,7 +277,7 @@ const deleteDepartment = (department) => {
                         class="w-full text-sm text-left text-gray-500 text-gray-400"
                     >
                         <thead
-                            class="text-xs text-gray-700 uppercase -50 -700 text-gray-400"
+                            class="text-xs text-gray-700 uppercase bg-gray-50"
                         >
                             <tr>
                                 <th scope="col" class="px-4 py-3">imagedep</th>
@@ -299,7 +300,7 @@ const deleteDepartment = (department) => {
                             <tr
                                 v-for="department in departments.data"
                                 :key="department.id"
-                                class="border-b border-gray-700"
+                                class="border-b"
                             >
                                 <td class="px-4 py-3">
                                     <img

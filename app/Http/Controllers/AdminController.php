@@ -285,8 +285,6 @@ class AdminController extends Controller
         }
 
 
-
-
         $service->save();
 
         return redirect()->route('admin.services');
@@ -379,40 +377,48 @@ class AdminController extends Controller
         return to_route('admin.departments');
     }
 
-
     public function storeDoc(Request $request)
     {
-
+        // Validate the request data
         $request->validate([
-            'docimage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'docimage' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Allow null image
             'docroom' => 'required',
             'docname' => 'required|unique:doctors,docname',
             'docspec' => 'required',
-            'docphone' => 'required',
             'docdep' => 'required',
         ]);
-
-        
-
-        $doctor = new Doctor;
-
-        $docimage = $request->docimage;
-
-        $imagename = time() . '.' . $docimage->getClientOriginalExtension();
-
-        $request->docimage->move('doctorimage', $imagename);
-        $doctor->docimage = $imagename;
-
-        $doctor->docroom = $request->docroom;
-        $doctor->docname = $request->docname;
-        $doctor->docspec = $request->docspec;
-        $doctor->docphone = $request->docphone;
-        $doctor->docdep = $request->docdep;
-
-        $doctor->save();
-
+    
+        // Find the user corresponding to the doctor's name
+        $user = User::where('name', $request->docname)->first();
+    
+        // Check if the user exists and retrieve the phone number
+        if ($user) {
+            // Create a new Doctor object
+            $doctor = new Doctor;
+    
+            // Handle the image upload (if an image is provided)
+            if ($request->hasFile('docimage')) {
+                $docimage = $request->docimage;
+                $imagename = time() . '.' . $docimage->getClientOriginalExtension();
+                $request->docimage->move('doctorimage', $imagename);
+                $doctor->docimage = $imagename; // Set the doctor's image
+            }
+    
+            // Assign other doctor attributes
+            $doctor->docroom = $request->docroom;
+            $doctor->docname = $request->docname;
+            $doctor->docspec = $request->docspec;
+            $doctor->docphone = $user->phone; // Set docphone to the phone from the user
+            $doctor->docdep = $request->docdep;
+    
+            // Save the doctor record
+            $doctor->save();
+        }
+    
+        // Redirect to the doctors page
         return redirect()->route('admin.doctors');
     }
+    
 
     public function updateDoc(Request $request, Doctor $doctor): RedirectResponse
     {
