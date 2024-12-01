@@ -10,29 +10,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-
-
-
-// Route::middleware('admin')->group(function () {
-//     Route::get('/admin/dashboard', [HomeController::class, 'dashboard'])->name('admin.dashboard');
-// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,13 +23,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// Route::get('/admin/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard')->middleware(['auth','doctor']);
-// Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware(['auth','doctor']);
-// Route::get('/doctor/dashboard', [HomeController::class, 'doctorDashboard'])->name('doctor.dashboard')->middleware(['auth','doctor']);
 
 
-
-
+Route::get('/auth/login', [HomeController::class, 'authLogin'])->name('auth.login');
 
 
 Route::middleware(['doctor'])->group(function () {
@@ -80,8 +57,7 @@ Route::middleware(['patient'])->group(function () {
     Route::get('/patient/myappointment', [HomeController::class, 'patientMyappointment'])->name('patient.myappointment');
     Route::post('/submit-feedback', [PatientController::class, 'submitFeedback'])->name('submit.feedback');
     
-    // Route::get('/patient/chatbot', [ChatbotController::class, 'patientChatbot'])->name('patient.chatbot');
-    // Patient-only routes
+
   
 
     Route::get('/departments/{department}', [HomeController::class, 'showByDepartment'])->name('departments.doctors');
@@ -166,5 +142,4 @@ Route::middleware(['admin'])->group(function () {
     Route::delete('/testimonials/{testimonial}', [AdminController::class, 'destroyTes'])->name('testimonial.destroy'); 
   
 
-    // Route::inertia('/admin/profile', 'Admin/Profile')->name('admin.profile'); 
 });

@@ -164,6 +164,16 @@ const deleteDoctor = (doctor) => {
         }
     });
 };
+
+
+const availableUsers = computed(() => {
+    // Extract docnames from the existing doctors
+    const assignedDocnames = props.doctors.data.map((doctor) => doctor.docname);
+
+    // Filter out users whose names are already in assignedDocnames
+    return props.users.filter((user) => !assignedDocnames.includes(user.name));
+});
+
 </script>
 
 <template>
@@ -182,8 +192,9 @@ const deleteDoctor = (doctor) => {
                 <label
                     for="docname"
                     class="block mb-2 text-sm font-medium text-gray-500"
-                    >Select docname</label
                 >
+                    Select docname
+                </label>
 
                 <select
                     id="docname"
@@ -191,7 +202,11 @@ const deleteDoctor = (doctor) => {
                     class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                 >
                     <option value="">Choose docname</option>
-                    <option v-for="user in users" :key="user.id">
+                    <option
+                        v-for="user in availableUsers"
+                        :key="user.id"
+                        :value="user.name"
+                    >
                         {{ user.name }}
                     </option>
                 </select>
@@ -227,7 +242,7 @@ const deleteDoctor = (doctor) => {
                 <select
                     id="docroom"
                     v-model="form.docroom"
-                    class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                 >
                     <option value="">Choose docroom</option>
                     <option v-for="room in rooms" :key="room.id">
@@ -247,7 +262,7 @@ const deleteDoctor = (doctor) => {
                 <select
                     id="docdep"
                     v-model="form.docdep"
-                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                 >
                     <option value="">Choose docdep</option>
                     <option
@@ -270,7 +285,7 @@ const deleteDoctor = (doctor) => {
                 <select
                     id="docspec"
                     v-model="form.docspec"
-                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    class="-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                 >
                     <option value="">Choose docspec</option>
                     <option
@@ -282,8 +297,6 @@ const deleteDoctor = (doctor) => {
                 </select>
                 <InputError class="mt-1" :message="form.errors.docspec" />
             </div>
-
-     
 
             <button
                 type="submit"

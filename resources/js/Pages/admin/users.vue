@@ -248,7 +248,7 @@ const closeViewModal = () => {
                 <input
                     id="name"
                     type="text"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     name="name"
                     v-model="form.name"
                     autofocus
@@ -268,7 +268,7 @@ const closeViewModal = () => {
                     type="email"
                     name="email"
                     id="email"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                     v-model="form.email"
                     autofocus
@@ -308,7 +308,7 @@ const closeViewModal = () => {
                     name="floating_password"
                     id="password"
                     v-model="form.password"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.password" />
@@ -325,7 +325,7 @@ const closeViewModal = () => {
                     name="phone"
                     id="phone"
                     v-model="form.phone"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.phone" />
@@ -342,7 +342,7 @@ const closeViewModal = () => {
                     name="address"
                     id="address"
                     v-model="form.address"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
                 />
                 <InputError class="mt-1" :message="form.errors.address" />
@@ -430,7 +430,7 @@ const closeViewModal = () => {
                             class="text-xs text-gray-700 uppercase bg-gray-50"
                         >
                             <tr>
-                                <th scope="col" class="px-4 py-3">#</th>
+                         
                                 <th scope="col" class="px-4 py-3">Email</th>
 
                                 <th scope="col" class="px-4 py-3">Address</th>
@@ -461,12 +461,7 @@ const closeViewModal = () => {
                                 :key="user.id"
                                 class="border-b"
                             >
-                                <th
-                                    scope="row"
-                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
-                                >
-                                    {{ user.id }}
-                                </th>
+                             
                                 <td class="px-4 py-3">{{ user.email }}</td>
 
                                 <td class="px-4 py-3">

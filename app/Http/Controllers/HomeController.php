@@ -256,7 +256,7 @@ class HomeController extends Controller
                     ->orWhere('docdep', 'like', "%{$search}%");
             })
             ->latest()
-            ->paginate(10); // Paginate with 10 users per page
+            ->paginate(50); // Paginate with 10 users per page
 
         // Return the filtered or unfiltered users to the Inertia view
         return inertia('admin/doctors', [
@@ -807,6 +807,16 @@ class HomeController extends Controller
             'testimonials' => $testimonials,
             'search' => $search,
 
+        ]);
+    }
+
+
+    
+    public function authLogin(): Response
+    {
+       
+        return Inertia::render('Auth/Login', [
+         
         ]);
     }
     

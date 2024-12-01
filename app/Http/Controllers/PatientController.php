@@ -42,7 +42,7 @@ class PatientController extends Controller
         // Validate the request
         $request->validate([
             'schedule_id' => 'required|exists:schedules,id',
-            'start_time' => 'required|unique:bookings,start_time',
+            'start_time' => 'required',
           
         ]);
     
